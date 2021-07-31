@@ -11,6 +11,14 @@ $ git branch -a
   remotes/origin/main
 ```
 
+### customize SLD
+set `Custom domain` as `iron.magictomagic.com` in [Pages][https://github.com/magictomagic/iron/settings/pages] once git action complete because the deploy method may change the domain back
+
 ## TODO
 
-更新`e-linkedin`字段
++ 更新`e-linkedin`字段
++ 看对应action涉及的源码或找其它原因，不要让它改回默认
+```yml
+- name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+```
