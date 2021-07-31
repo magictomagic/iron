@@ -1,4 +1,4 @@
-baseURL = "https://magictomagic.github.io/"
+baseURL = "https://iron.magictomagic.com/"
 languageCode = "en"
 defaultContentLanguage = "en"                             # en / zh-cn / ... (This field determines which i18n file to use)
 title = "Iron Age"
