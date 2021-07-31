@@ -1,0 +1,229 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title> - Iron Age</title>
+<meta name=renderer content="webkit">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=cache-control content="no-transform">
+<meta http-equiv=cache-control content="no-siteapp">
+<meta name=theme-color content="#f8f5ec">
+<meta name=msapplication-navbutton-color content="#f8f5ec">
+<meta name=apple-mobile-web-app-capable content="yes">
+<meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec">
+<meta name=author content="olOwOlo"><meta name=description content="记一次华为 nova 5i 刷机失败 ​	这只手机是机关单位发给公务员的。现在在我手上，为了避免遭受来自华为潜在的监控问题，删除 EMUI 自带的垃圾软件，体验原生安卓（扫盲）的流畅，享受 Google 的服务，我就开始尝试刷机了。
+​	刷机，关键是获取 Boot Loader 密码（BL密码）。经过遨游网络世界，看了被转无数次的这种教程。在 adb shell 后 su 获取临时 root 权限失败后，我总结了刷机的五个方法。
+  使用一键 root 软件。
+  官方渠道获取 BL 密码。
+  淘宝获取 BL 密码。
+  dc-docker 获取 BL 密码。
+  暴力破解
+下面是记录我怎么放弃的
+第一个：尝试过主流的一键 root 软件，最好的一个情况是进度卡在 3%，然后显示失败。放弃！
+第二个：2018年 5月 24日之前可以上官网申请，现在不行了。尝试 bilibili 的炸服，不得不说，华为的邮件回复的还是比较快的，而且是在凌晨的时候，打电话也有人接，虽然给我的答复都说不能提供这项服务mlgj，但起码是在华为解决了就业问题，体现了华为解决大家就业问题的功德，怪不得什么造假问题，251事件不断曝出，无论是 in wall 的媒体，还是舆论，都力挺华为。放弃！
+第三个：问了八九个店铺，每一个都表示不支持我这个机型。放弃！
+第四个：寻找适配机型，显示
+1 2 3 4 5  selection : manufacturer - Huawei modems model - Auto detect (recommended) modem not found !"><meta name=keywords content="Hugo,theme,even">
+<meta name=generator content="Hugo 0.86.1 with theme even">
+<link rel=canonical href=https://magictomagic.github.io/2020-01-14-%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%8D%8E%E4%B8%BA-nova-5i-%E5%88%B7%E6%9C%BA%E5%A4%B1%E8%B4%A5/>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=manifest href=/manifest.json>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
+<link href=/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css rel=stylesheet>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous>
+<meta property="og:title" content>
+<meta property="og:description" content="记一次华为 nova 5i 刷机失败 ​	这只手机是机关单位发给公务员的。现在在我手上，为了避免遭受来自华为潜在的监控问题，删除 EMUI 自带的垃圾软件，体验原生安卓（扫盲）的流畅，享受 Google 的服务，我就开始尝试刷机了。
+​	刷机，关键是获取 Boot Loader 密码（BL密码）。经过遨游网络世界，看了被转无数次的这种教程。在 adb shell 后 su 获取临时 root 权限失败后，我总结了刷机的五个方法。
+  使用一键 root 软件。
+  官方渠道获取 BL 密码。
+  淘宝获取 BL 密码。
+  dc-docker 获取 BL 密码。
+  暴力破解
+下面是记录我怎么放弃的
+第一个：尝试过主流的一键 root 软件，最好的一个情况是进度卡在 3%，然后显示失败。放弃！
+第二个：2018年 5月 24日之前可以上官网申请，现在不行了。尝试 bilibili 的炸服，不得不说，华为的邮件回复的还是比较快的，而且是在凌晨的时候，打电话也有人接，虽然给我的答复都说不能提供这项服务mlgj，但起码是在华为解决了就业问题，体现了华为解决大家就业问题的功德，怪不得什么造假问题，251事件不断曝出，无论是 in wall 的媒体，还是舆论，都力挺华为。放弃！
+第三个：问了八九个店铺，每一个都表示不支持我这个机型。放弃！
+第四个：寻找适配机型，显示
+1 2 3 4 5  selection : manufacturer - Huawei modems model - Auto detect (recommended) modem not found !">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://magictomagic.github.io/2020-01-14-%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%8D%8E%E4%B8%BA-nova-5i-%E5%88%B7%E6%9C%BA%E5%A4%B1%E8%B4%A5/"><meta property="article:section" content>
+<meta itemprop=name content>
+<meta itemprop=description content="记一次华为 nova 5i 刷机失败 ​	这只手机是机关单位发给公务员的。现在在我手上，为了避免遭受来自华为潜在的监控问题，删除 EMUI 自带的垃圾软件，体验原生安卓（扫盲）的流畅，享受 Google 的服务，我就开始尝试刷机了。
+​	刷机，关键是获取 Boot Loader 密码（BL密码）。经过遨游网络世界，看了被转无数次的这种教程。在 adb shell 后 su 获取临时 root 权限失败后，我总结了刷机的五个方法。
+  使用一键 root 软件。
+  官方渠道获取 BL 密码。
+  淘宝获取 BL 密码。
+  dc-docker 获取 BL 密码。
+  暴力破解
+下面是记录我怎么放弃的
+第一个：尝试过主流的一键 root 软件，最好的一个情况是进度卡在 3%，然后显示失败。放弃！
+第二个：2018年 5月 24日之前可以上官网申请，现在不行了。尝试 bilibili 的炸服，不得不说，华为的邮件回复的还是比较快的，而且是在凌晨的时候，打电话也有人接，虽然给我的答复都说不能提供这项服务mlgj，但起码是在华为解决了就业问题，体现了华为解决大家就业问题的功德，怪不得什么造假问题，251事件不断曝出，无论是 in wall 的媒体，还是舆论，都力挺华为。放弃！
+第三个：问了八九个店铺，每一个都表示不支持我这个机型。放弃！
+第四个：寻找适配机型，显示
+1 2 3 4 5  selection : manufacturer - Huawei modems model - Auto detect (recommended) modem not found !">
+<meta itemprop=wordCount content="83">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content>
+<meta name=twitter:description content="记一次华为 nova 5i 刷机失败 ​	这只手机是机关单位发给公务员的。现在在我手上，为了避免遭受来自华为潜在的监控问题，删除 EMUI 自带的垃圾软件，体验原生安卓（扫盲）的流畅，享受 Google 的服务，我就开始尝试刷机了。
+​	刷机，关键是获取 Boot Loader 密码（BL密码）。经过遨游网络世界，看了被转无数次的这种教程。在 adb shell 后 su 获取临时 root 权限失败后，我总结了刷机的五个方法。
+  使用一键 root 软件。
+  官方渠道获取 BL 密码。
+  淘宝获取 BL 密码。
+  dc-docker 获取 BL 密码。
+  暴力破解
+下面是记录我怎么放弃的
+第一个：尝试过主流的一键 root 软件，最好的一个情况是进度卡在 3%，然后显示失败。放弃！
+第二个：2018年 5月 24日之前可以上官网申请，现在不行了。尝试 bilibili 的炸服，不得不说，华为的邮件回复的还是比较快的，而且是在凌晨的时候，打电话也有人接，虽然给我的答复都说不能提供这项服务mlgj，但起码是在华为解决了就业问题，体现了华为解决大家就业问题的功德，怪不得什么造假问题，251事件不断曝出，无论是 in wall 的媒体，还是舆论，都力挺华为。放弃！
+第三个：问了八九个店铺，每一个都表示不支持我这个机型。放弃！
+第四个：寻找适配机型，显示
+1 2 3 4 5  selection : manufacturer - Huawei modems model - Auto detect (recommended) modem not found !"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]-->
+</head>
+<body>
+<div id=mobile-navbar class=mobile-navbar>
+<div class=mobile-header-logo>
+<a href=/ class=logo>Iron</a>
+</div>
+<div class=mobile-navbar-icon>
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+<nav id=mobile-menu class="mobile-menu slideout-menu">
+<ul class=mobile-menu-list>
+<a href=/>
+<li class=mobile-menu-item>Home</li>
+</a><a href=/post/>
+<li class=mobile-menu-item>Archives</li>
+</a><a href=/tags/>
+<li class=mobile-menu-item>Tags</li>
+</a><a href=/categories/>
+<li class=mobile-menu-item>Categories</li>
+</a>
+</ul>
+</nav>
+<div class=container id=mobile-panel>
+<header id=header class=header>
+<div class=logo-wrapper>
+<a href=/ class=logo>Iron</a>
+</div>
+<nav class=site-navbar>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a class=menu-item-link href=/>Home</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/post/>Archives</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/tags/>Tags</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/categories/>Categories</a>
+</li>
+</ul>
+</nav>
+</header>
+<main id=main class=main>
+<div class=content-wrapper>
+<div id=content class=content>
+<article class=post>
+<div class=post-content>
+<h1 id=记一次华为-nova-5i-刷机失败>记一次华为 nova 5i 刷机失败</h1>
+<p>​ 这只手机是机关单位发给公务员的。现在在我手上，为了避免遭受来自华为<a href=https://zh.wikipedia.org/wiki/%E5%AF%B9%E5%8D%8E%E4%B8%BA%E7%9A%84%E4%BA%89%E8%AE%AE#%E7%BE%8E%E5%9B%BD%E5%8F%8A%E7%9B%B8%E9%97%9C%E5%9C%8B%E7%9A%84%E5%B0%81%E6%9D%80%E4%B8%8E%E9%99%90%E5%88%B6(https://zh.wikipedia.org/wiki/%E5%AF%B9%E5%8D%8E%E4%B8%BA%E7%9A%84%E4%BA%89%E8%AE%AE#%E7%BE%8E%E5%9B%BD%E5%8F%8A%E7%9B%B8%E9%97%9C%E5%9C%8B%E7%9A%84%E5%B0%81%E6%9D%80%E4%B8%8E%E9%99%90%E5%88%B6)>潜在的监控问题</a>，删除 EMUI 自带的垃圾软件，体验原生安卓（<a href=https://www.jianshu.com/p/380807fa1532>扫盲</a>）的流畅，享受 Google 的服务，我就开始尝试刷机了。</p>
+<p>​ 刷机，关键是获取 Boot Loader 密码（BL密码）。经过遨游网络世界，看了被转无数次的<a href=https://www.52pojie.cn/thread-816065-1-1.html>这种</a>教程。在 adb shell 后 su 获取临时 root 权限失败后，我总结了刷机的五个方法。</p>
+<ol>
+<li>
+<p>使用一键 root 软件。</p>
+</li>
+<li>
+<p>官方渠道获取 BL 密码。</p>
+</li>
+<li>
+<p>淘宝获取 BL 密码。</p>
+</li>
+<li>
+<p>dc-docker 获取 BL 密码。</p>
+</li>
+<li>
+<p>暴力破解</p>
+<p><strong>下面是记录我怎么放弃的</strong></p>
+<p>第一个：尝试过主流的一键 root 软件，最好的一个情况是进度卡在 3%，然后显示失败。放弃！</p>
+<p>第二个：2018年 5月 24日之前可以上官网申请，现在不行了。尝试 bilibili 的<a href=https://www.bilibili.com/read/cv3000764/>炸服</a>，不得不说，华为的邮件回复的还是比较快的，而且是在凌晨的时候，打电话也有人接，虽然给我的答复都说不能提供这项服务<del>mlgj</del>，<del>但起码是在华为解决了就业问题，体现了华为解决大家就业问题的功德，怪不得什么造假问题，251事件不断曝出，无论是 in wall 的媒体，还是舆论，都力挺华为</del>。放弃！</p>
+<p>第三个：问了八九个店铺，每一个都表示不支持我这个机型。放弃！</p>
+<p>第四个：寻找适配机型，显示</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>selection :
+manufacturer - Huawei modems
+model - Auto detect <span class=o>(</span>recommended<span class=o>)</span>
+
+modem not found !
+</code></pre></td></tr></table>
+</div>
+</div><p>放弃！</p>
+<p>第五个：16位数字，10^16次尝试，我这辈子是等不出结果了。放弃！</p>
+</li>
+</ol>
+<p><strong>总结</strong></p>
+<p>​ 最开始当然要先了解刷机的<a href=https://www.jianshu.com/p/380807fa1532>原理</a>，安装相应的<a href="https://developer.android.com/studio/releases/platform-tools.html?hl=zh-CN">工具</a>，了解基本的 <a href=https://blog.csdn.net/ekeuy/article/details/43112645>ADB 命令</a>。当你开始具体问题具体分析后，如果你没有穿越时间的能力，看到<a href=https://zhuanlan.zhihu.com/p/37324657>这种</a>、<a href=http://blog.sina.com.cn/s/blog_540316260102wv92.html>这种</a>教程就直接关掉吧，老版本的华为可以参考<a href=https://developer.huawei.com/consumer/cn/doc/50127>这个</a>教程~~，不过估计因为之后系统升级过还是没用~~。其它牌子手机可以参考<a href=https://source.android.com/source/running#flash-unlock>这个</a>教程，在<a href=https://developers.google.com/android/images>这里</a>找到你要刷入的系统。</p>
+<p>​ 当然，性价比最高的方法是不买华为手机。那么国产手机有什么可以推荐的呢？小米吧！<del>小米官方若看到这条广告，高兴就意思一下</del></p>
+<p><strong>申明</strong></p>
+<p>​ 鉴于国内盛行的民族主义，我有必要作出声明：本人不是美国的间谍。</p>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=social-links>
+<a href=mailto:your@email.com class="iconfont icon-email" title=email></a>
+<a href=http://localhost:1313 class="iconfont icon-stack-overflow" title=stack-overflow></a>
+<a href=http://localhost:1313 class="iconfont icon-twitter" title=twitter></a>
+<a href=http://localhost:1313 class="iconfont icon-facebook" title=facebook></a>
+<a href=http://localhost:1313 class="iconfont icon-linkedin" title=linkedin></a>
+<a href=http://localhost:1313 class="iconfont icon-google" title=google></a>
+<a href=http://localhost:1313 class="iconfont icon-github" title=github></a>
+<a href=http://localhost:1313 class="iconfont icon-weibo" title=weibo></a>
+<a href=http://localhost:1313 class="iconfont icon-zhihu" title=zhihu></a>
+<a href=http://localhost:1313 class="iconfont icon-douban" title=douban></a>
+<a href=http://localhost:1313 class="iconfont icon-pocket" title=pocket></a>
+<a href=http://localhost:1313 class="iconfont icon-tumblr" title=tumblr></a>
+<a href=http://localhost:1313 class="iconfont icon-instagram" title=instagram></a>
+<a href=http://localhost:1313 class="iconfont icon-gitlab" title=gitlab></a>
+<a href=http://localhost:1313 class="iconfont icon-bilibili" title=bilibili></a>
+<a href=https://magictomagic.github.io/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a>
+</div>
+<div class=copyright>
+<span class=power-by>
+Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
+</span>
+<span class=division>|</span>
+<span class=theme-info>
+Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
+</span>
+<span class=copyright-year>
+&copy;
+2017 -
+2021<span class=heart><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+</span>
+</div>
+</footer>
+<div class=back-to-top id=back-to-top>
+<i class="iconfont icon-up"></i>
+</div>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script>
+</body>
+</html>
