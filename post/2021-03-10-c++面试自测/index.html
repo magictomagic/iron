@@ -1,0 +1,395 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title> - Iron Age</title>
+<meta name=renderer content="webkit">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=cache-control content="no-transform">
+<meta http-equiv=cache-control content="no-siteapp">
+<meta name=theme-color content="#f8f5ec">
+<meta name=msapplication-navbutton-color content="#f8f5ec">
+<meta name=apple-mobile-web-app-capable content="yes">
+<meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec">
+<meta name=author content="olOwOlo"><meta name=description content="C++ 自测 要了解底层原理， 不仅仅是概念，还要实现 memcpy memmove With memcpy, the destination cannot overlap the source at all. With memmove it can. This means that memmove might be very slightly slower than memcpy, as it cannot make the same assumptions. Click to expand! 1 2 3 4 5 6 7 8 9 10 11"><meta name=keywords content="Hugo,theme,even">
+<meta name=generator content="Hugo 0.86.1 with theme even">
+<link rel=canonical href=https://iron.magictomagic.com/post/2021-03-10-c++%E9%9D%A2%E8%AF%95%E8%87%AA%E6%B5%8B/>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=manifest href=/manifest.json>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
+<link href=/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css rel=stylesheet>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous>
+<meta property="og:title" content>
+<meta property="og:description" content="C++ 自测 要了解底层原理， 不仅仅是概念，还要实现 memcpy memmove With memcpy, the destination cannot overlap the source at all. With memmove it can. This means that memmove might be very slightly slower than memcpy, as it cannot make the same assumptions. Click to expand! 1 2 3 4 5 6 7 8 9 10 11">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://iron.magictomagic.com/post/2021-03-10-c++%E9%9D%A2%E8%AF%95%E8%87%AA%E6%B5%8B/"><meta property="article:section" content="post">
+<meta itemprop=name content>
+<meta itemprop=description content="C++ 自测 要了解底层原理， 不仅仅是概念，还要实现 memcpy memmove With memcpy, the destination cannot overlap the source at all. With memmove it can. This means that memmove might be very slightly slower than memcpy, as it cannot make the same assumptions. Click to expand! 1 2 3 4 5 6 7 8 9 10 11">
+<meta itemprop=wordCount content="1319">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content>
+<meta name=twitter:description content="C++ 自测 要了解底层原理， 不仅仅是概念，还要实现 memcpy memmove With memcpy, the destination cannot overlap the source at all. With memmove it can. This means that memmove might be very slightly slower than memcpy, as it cannot make the same assumptions. Click to expand! 1 2 3 4 5 6 7 8 9 10 11"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]-->
+</head>
+<body>
+<div id=mobile-navbar class=mobile-navbar>
+<div class=mobile-header-logo>
+<a href=/ class=logo>Iron</a>
+</div>
+<div class=mobile-navbar-icon>
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+<nav id=mobile-menu class="mobile-menu slideout-menu">
+<ul class=mobile-menu-list>
+<a href=/>
+<li class=mobile-menu-item>Home</li>
+</a><a href=/post/>
+<li class=mobile-menu-item>Archives</li>
+</a><a href=/tags/>
+<li class=mobile-menu-item>Tags</li>
+</a><a href=/categories/>
+<li class=mobile-menu-item>Categories</li>
+</a>
+</ul>
+</nav>
+<div class=container id=mobile-panel>
+<header id=header class=header>
+<div class=logo-wrapper>
+<a href=/ class=logo>Iron</a>
+</div>
+<nav class=site-navbar>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a class=menu-item-link href=/>Home</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/post/>Archives</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/tags/>Tags</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/categories/>Categories</a>
+</li>
+</ul>
+</nav>
+</header>
+<main id=main class=main>
+<div class=content-wrapper>
+<div id=content class=content>
+<article class=post>
+<header class=post-header>
+<h1 class=post-title></h1>
+<div class=post-meta>
+<span class=post-time> 0001-01-01 </span>
+</div>
+</header>
+<div class=post-toc id=post-toc>
+<h2 class=post-toc-title>Contents</h2>
+<div class="post-toc-content always-active">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#c-自测>C++ 自测</a>
+<ul>
+<li><a href=#memcpy-memmove>memcpy memmove</a></li>
+<li><a href=#构造函数的显示和隐式调用>构造函数的显示和隐式调用</a></li>
+<li><a href=#大端小端检测方法>大端小端检测方法</a></li>
+<li><a href=#拷贝复制构造函数>拷贝(复制)构造函数</a></li>
+<li><a href=#智能指针>智能指针</a>
+<ul>
+<li><a href=#引用计数>引用计数</a></li>
+<li><a href=#raii>RAII</a></li>
+</ul>
+</li>
+<li><a href=#多态-重载-重写>多态 重载 重写</a></li>
+<li><a href=#堆和栈的区别>堆和栈的区别</a></li>
+<li><a href=#编写-socket-套接字>编写 Socket 套接字</a></li>
+<li><a href=#extern-c>extern &ldquo;C&rdquo;</a></li>
+<li><a href=#哪些成员函数不能被继承>哪些成员函数不能被继承</a></li>
+</ul>
+</li>
+<li><a href=#学院派自测>学院派自测</a>
+<ul>
+<li><a href=#进程和线程的区别>进程和线程的区别</a></li>
+<li><a href=#多进程与多线程的区别>多进程与多线程的区别</a></li>
+<li><a href=#线程间通信方式及优缺点>线程间通信方式及优缺点</a></li>
+<li><a href=#进程间通信方式及优缺点>进程间通信方式及优缺点</a></li>
+<li><a href=#设计模式高频>设计模式高频</a></li>
+</ul>
+</li>
+<li><a href=#linux-后端开发自测>Linux 后端开发自测</a>
+<ul>
+<li><a href=#unixlinux下的进程间通信和各自的特点>unix/linux下的进程间通信和各自的特点</a></li>
+<li><a href=#epoll>epoll</a></li>
+<li><a href=#fork>fork</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class=post-content>
+<h1 id=c-自测>C++ 自测</h1>
+<blockquote>
+<p>要了解底层原理，
+不仅仅是概念，还要实现</p>
+</blockquote>
+<h2 id=memcpy-memmove>memcpy memmove</h2>
+<blockquote>
+<p>With memcpy, the destination cannot overlap the source at all. With memmove it can. This means that memmove might be very slightly slower than memcpy, as it cannot make the same assumptions.</p>
+</blockquote>
+<details>
+<summary>Click to expand!</summary>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-C++ data-lang=C++><span class=kt>void</span> <span class=o>*</span> <span class=kr>__cdecl</span> <span class=nf>memcpy</span> <span class=p>(</span> <span class=kt>void</span> <span class=o>*</span> <span class=n>dst</span><span class=p>,</span><span class=k>const</span> <span class=kt>void</span> <span class=o>*</span> <span class=n>src</span><span class=p>,</span><span class=n>size_t</span> <span class=n>count</span><span class=p>){</span>
+  <span class=kt>void</span> <span class=o>*</span> <span class=n>ret</span> <span class=o>=</span> <span class=n>dst</span><span class=p>;</span>
+  <span class=k>while</span> <span class=p>(</span><span class=n>count</span><span class=o>--</span><span class=p>){</span> <span class=c1>// 注意， memcpy函数没有处理dst和src区域是否重叠的问题
+</span><span class=c1></span>    <span class=o>*</span><span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=n>dst</span> <span class=o>=</span> <span class=o>*</span><span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=n>src</span><span class=p>;</span>
+    <span class=n>dst</span> <span class=o>=</span> <span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=n>dst</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>
+    <span class=n>src</span> <span class=o>=</span> <span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=n>src</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>
+  <span class=p>}</span>
+  <span class=k>return</span><span class=p>(</span><span class=n>ret</span><span class=p>);</span>
+<span class=p>}</span>
+
+<span class=kt>void</span> <span class=o>*</span> <span class=kr>__cdecl</span> <span class=nf>memmove</span> <span class=p>(</span><span class=kt>void</span> <span class=o>*</span> <span class=n>dst</span><span class=p>,</span><span class=k>const</span> <span class=kt>void</span> <span class=o>*</span> <span class=n>src</span><span class=p>,</span><span class=n>size_t</span> <span class=n>count</span><span class=p>){</span>
+  <span class=kt>void</span> <span class=o>*</span> <span class=n>ret</span> <span class=o>=</span> <span class=n>dst</span><span class=p>;</span>
+  <span class=k>if</span> <span class=p>(</span><span class=n>dst</span> <span class=o>&lt;=</span> <span class=n>src</span> <span class=o>||</span> <span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=n>dst</span> <span class=o>&gt;=</span> <span class=p>((</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=n>src</span> <span class=o>+</span> <span class=n>count</span><span class=p>)){</span> <span class=c1>// 若dst和src区域没有重叠，则从起始处开始逐一拷贝
+</span><span class=c1></span>    <span class=k>while</span> <span class=p>(</span><span class=n>count</span><span class=o>--</span><span class=p>){</span>
+      <span class=o>*</span><span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=n>dst</span> <span class=o>=</span> <span class=o>*</span><span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=n>src</span><span class=p>;</span>
+      <span class=n>dst</span> <span class=o>=</span> <span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=n>dst</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>
+      <span class=n>src</span> <span class=o>=</span> <span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=n>src</span> <span class=o>+</span> <span class=mi>1</span><span class=p>;</span>
+    <span class=p>}</span>
+  <span class=p>}</span><span class=k>else</span><span class=p>{</span> <span class=c1>// 若dst和src 区域交叉，则从尾部开始向起始位置拷贝，这样可以避免数据冲突
+</span><span class=c1></span>    <span class=n>dst</span> <span class=o>=</span> <span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=n>dst</span> <span class=o>+</span> <span class=n>count</span> <span class=o>-</span> <span class=mi>1</span><span class=p>;</span>
+    <span class=n>src</span> <span class=o>=</span> <span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=n>src</span> <span class=o>+</span> <span class=n>count</span> <span class=o>-</span> <span class=mi>1</span><span class=p>;</span>
+    <span class=k>while</span> <span class=p>(</span><span class=n>count</span><span class=o>--</span><span class=p>){</span>
+      <span class=o>*</span><span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=n>dst</span> <span class=o>=</span> <span class=o>*</span><span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=n>src</span><span class=p>;</span>
+      <span class=n>dst</span> <span class=o>=</span> <span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=n>dst</span> <span class=o>-</span> <span class=mi>1</span><span class=p>;</span>
+      <span class=n>src</span> <span class=o>=</span> <span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=n>src</span> <span class=o>-</span> <span class=mi>1</span><span class=p>;</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=k>return</span><span class=p>(</span><span class=n>ret</span><span class=p>);</span>
+</code></pre></td></tr></table>
+</div>
+</div></details>
+<hr>
+<h2 id=构造函数的显示和隐式调用>构造函数的显示和隐式调用</h2>
+<details>
+<summary>Click to expand!</summary>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c++ data-lang=c++><span class=k>class</span> <span class=nc>Test1</span><span class=p>{</span>
+  <span class=k>public</span><span class=o>:</span>
+    <span class=n>Test1</span><span class=p>(</span><span class=kt>int</span> <span class=n>n</span><span class=p>){</span>
+        <span class=n>num</span><span class=o>=</span><span class=n>n</span><span class=p>;</span>
+    <span class=p>}</span><span class=c1>//普通构造函数
+</span><span class=c1></span>  <span class=k>private</span><span class=o>:</span>
+    <span class=kt>int</span> <span class=n>num</span><span class=p>;</span>
+<span class=p>};</span>
+<span class=k>class</span> <span class=nc>Test2</span><span class=p>{</span>
+  <span class=k>public</span><span class=o>:</span>
+    <span class=k>explicit</span> <span class=n>Test2</span><span class=p>(</span><span class=kt>int</span> <span class=n>n</span><span class=p>){</span>
+        <span class=n>num</span><span class=o>=</span><span class=n>n</span><span class=p>;</span>
+    <span class=p>}</span><span class=c1>//explicit(显式)构造函数
+</span><span class=c1></span>  <span class=k>private</span><span class=o>:</span>
+    <span class=kt>int</span> <span class=n>num</span><span class=p>;</span>
+<span class=p>};</span>
+<span class=kt>int</span> <span class=nf>main</span><span class=p>(){</span>
+  <span class=n>Test1</span> <span class=n>t1</span><span class=o>=</span><span class=mi>12</span><span class=p>;</span><span class=c1>//隐式调用其构造函数,成功
+</span><span class=c1></span>  <span class=n>Test2</span> <span class=n>t2</span><span class=o>=</span><span class=mi>12</span><span class=p>;</span><span class=c1>//编译错误,不能隐式调用其构造函数
+</span><span class=c1></span>  <span class=n>Test2</span> <span class=n>t2</span><span class=p>(</span><span class=mi>12</span><span class=p>);</span><span class=c1>//显式调用成功
+</span><span class=c1></span>  <span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Test1的构造函数带一个int型的参数，代码23行会隐式转换成调用Test1的这个构造函数。而Test2的构造函数被声明为explicit（显式），这表示不能通过隐式转换来调用这个构造函数，因此代码24行会出现编译错误。 普通构造函数能够被隐式调用 。而explicit构造函数只能被显式调用。</p>
+</details>
+<hr>
+<h2 id=大端小端检测方法>大端小端检测方法</h2>
+<details>
+<summary>Click to expand!</summary>
+<p>大端模式，是指数据的高字节位保存在内存的低地址中，而数据的低字节位保存在内存的高地址中。</p>
+<p>小端模式，是指数据的高字节位 保存在 内存的高地址中，而数据的低字节位保存在 内存的低地址中。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-c++ data-lang=c++><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+<span class=kt>char</span> <span class=o>*</span><span class=n>p</span> <span class=o>=</span> <span class=p>(</span><span class=kt>char</span> <span class=o>*</span><span class=p>)</span><span class=o>&amp;</span><span class=n>i</span><span class=p>;</span>
+<span class=k>if</span><span class=p>(</span><span class=o>*</span><span class=n>p</span> <span class=o>==</span> <span class=mi>1</span><span class=p>)</span> <span class=n>printf</span><span class=p>(</span><span class=s>&#34;Little Endian&#34;</span><span class=p>);</span>
+<span class=k>else</span> <span class=nf>printf</span><span class=p>(</span><span class=s>&#34;Big Endian&#34;</span><span class=p>);</span>
+</code></pre></td></tr></table>
+</div>
+</div></details>
+<hr>
+<h2 id=拷贝复制构造函数>拷贝(复制)构造函数</h2>
+<details>
+<summary>Click to expand!</summary>
+</details>
+<hr>
+<h2 id=智能指针>智能指针</h2>
+<h3 id=引用计数>引用计数</h3>
+<p>引用计数这种计数是为了防止内存泄露而产生的。 基本想法是对于动态分配的对象，进行引用计数，每当增加一次对同一个对象的引用，那么引用对象的引用计数就会增加一次， 每删除一次引用，引用计数就会减一，当一个对象的引用计数减为零时，就自动删除指向的堆内存。</p>
+<h3 id=raii>RAII</h3>
+<p>对于一个对象而言，我们在构造函数的时候申请空间，而在析构函数（在离开作用域时调用）的时候释放空间， 也就是我们常说的 RAII 资源获取即初始化技术(resource acquisition is the initialization technology.)。</p>
+<p>在传统 C++ 里我们只好使用 new 和 delete 去 『记得』对资源进行释放。而 C++11 引入了智能指针的概念，使用了引用计数的想法，让程序员不再需要关心手动释放内存。 这些智能指针就包括 std::shared_ptr/std::unique_ptr/std::weak_ptr，使用它们需要包含头文件 <code>&lt;memory></code>。</p>
+<p>智能指针就是一个类，当超出了类的作用域是，类会自动调用析构函数，析构函数会自动释放资源。</p>
+<h2 id=多态-重载-重写>多态 重载 重写</h2>
+<hr>
+<h2 id=堆和栈的区别>堆和栈的区别</h2>
+<hr>
+<h2 id=编写-socket-套接字>编写 Socket 套接字</h2>
+<hr>
+<h2 id=extern-c>extern &ldquo;C&rdquo;</h2>
+<hr>
+<h2 id=哪些成员函数不能被继承>哪些成员函数不能被继承</h2>
+<h1 id=学院派自测>学院派自测</h1>
+<h2 id=进程和线程的区别>进程和线程的区别</h2>
+<h2 id=多进程与多线程的区别>多进程与多线程的区别</h2>
+<h2 id=线程间通信方式及优缺点>线程间通信方式及优缺点</h2>
+<h2 id=进程间通信方式及优缺点>进程间通信方式及优缺点</h2>
+<h2 id=设计模式高频>设计模式高频</h2>
+<h1 id=linux-后端开发自测>Linux 后端开发自测</h1>
+<h2 id=unixlinux下的进程间通信和各自的特点>unix/linux下的进程间通信和各自的特点</h2>
+<h2 id=epoll>epoll</h2>
+<h2 id=fork>fork</h2>
+<p>std::move</p>
+<p>unique_ptr</p>
+<p>std::move 移动构造函数，左值变右值</p>
+</div>
+<div class=post-copyright>
+<p class=copyright-item>
+<span class=item-title>Author</span>
+<span class=item-content>olOwOlo</span>
+</p>
+<p class=copyright-item>
+<span class=item-title>LastMod</span>
+<span class=item-content>
+0001-01-01
+</span>
+</p>
+</div>
+<footer class=post-footer>
+<nav class=post-nav>
+<a class=prev href=/post/2021-02-02-%E6%AF%95%E8%AE%BE%E8%BF%9B%E7%A8%8B/>
+<i class="iconfont icon-left"></i>
+<span class="prev-text nav-default"></span>
+<span class="prev-text nav-mobile">Prev</span>
+</a>
+<a class=next href=/post/2021-03-19-%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B7%A5%E5%85%B7/>
+<span class="next-text nav-default"></span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i>
+</a>
+</nav>
+</footer>
+</article>
+</div>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=social-links>
+<a href=mailto:your@email.com class="iconfont icon-email" title=email></a>
+<a href=http://localhost:1313 class="iconfont icon-stack-overflow" title=stack-overflow></a>
+<a href=http://localhost:1313 class="iconfont icon-twitter" title=twitter></a>
+<a href=http://localhost:1313 class="iconfont icon-facebook" title=facebook></a>
+<a href=http://localhost:1313 class="iconfont icon-linkedin" title=linkedin></a>
+<a href=http://localhost:1313 class="iconfont icon-google" title=google></a>
+<a href=http://localhost:1313 class="iconfont icon-github" title=github></a>
+<a href=http://localhost:1313 class="iconfont icon-weibo" title=weibo></a>
+<a href=http://localhost:1313 class="iconfont icon-zhihu" title=zhihu></a>
+<a href=http://localhost:1313 class="iconfont icon-douban" title=douban></a>
+<a href=http://localhost:1313 class="iconfont icon-pocket" title=pocket></a>
+<a href=http://localhost:1313 class="iconfont icon-tumblr" title=tumblr></a>
+<a href=http://localhost:1313 class="iconfont icon-instagram" title=instagram></a>
+<a href=http://localhost:1313 class="iconfont icon-gitlab" title=gitlab></a>
+<a href=http://localhost:1313 class="iconfont icon-bilibili" title=bilibili></a>
+<a href=https://iron.magictomagic.com/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a>
+</div>
+<div class=copyright>
+<span class=power-by>
+Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
+</span>
+<span class=division>|</span>
+<span class=theme-info>
+Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
+</span>
+<span class=copyright-year>
+&copy;
+2017 -
+2021<span class=heart><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+</span>
+</div>
+</footer>
+<div class=back-to-top id=back-to-top>
+<i class="iconfont icon-up"></i>
+</div>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script>
+</body>
+</html>
