@@ -30,7 +30,7 @@
 <meta itemprop=name content="git 笔记">
 <meta itemprop=description content="git 裸体 概览 git 目录下 1 2 find 目录名 # 将对应目录下的 子孙文件&子孙目录 平铺在控制台 find 目录名 -type f # 将对应目录下的文件平铺在控制台 初始化 1 2 3"><meta itemprop=datePublished content="2021-02-28T01:37:56+08:00">
 <meta itemprop=dateModified content="2021-02-28T01:37:56+08:00">
-<meta itemprop=wordCount content="2623">
+<meta itemprop=wordCount content="2783">
 <meta itemprop=keywords content="git,"><meta name=twitter:card content="summary">
 <meta name=twitter:title content="git 笔记">
 <meta name=twitter:description content="git 裸体 概览 git 目录下 1 2 find 目录名 # 将对应目录下的 子孙文件&子孙目录 平铺在控制台 find 目录名 -type f # 将对应目录下的文件平铺在控制台 初始化 1 2 3"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
@@ -106,7 +106,8 @@
 </li>
 <li><a href=#基本>基本</a>
 <ul>
-<li><a href=#错误处理>错误处理</a></li>
+<li><a href=#删除gitignore记录>删除.gitignore记录</a></li>
+<li><a href=#删除commit记录>删除commit记录</a></li>
 </ul>
 </li>
 <li><a href=#分支>分支</a>
@@ -234,10 +235,20 @@ git log --pretty<span class=o>=</span>oneline
 </code></pre></td></tr></table>
 </div>
 </div><p><img src=/img/image-20210228214140075.png alt=image-20210228214140075><img src=/img/image-20210228215300506.png alt=image-20210228215300506></p>
-<h3 id=错误处理>错误处理</h3>
+<h3 id=删除gitignore记录>删除.gitignore记录</h3>
 <p>.gitignore无效
 <code>git rm -r --cached .</code></p>
 <p><code>git rm --cached filename</code></p>
+<h3 id=删除commit记录>删除commit记录</h3>
+<p>删除<code>.git</code>文件夹可能会导致git存储库中的问题。如果要删除所有提交历史记录，但将代码保持在当前状态，可以按照以下方式安全地执行此操作：</p>
+<ol>
+<li><code>尝试 运行 git checkout --orphan latest_branch</code></li>
+<li>添加所有文件<code>git add -A</code></li>
+<li>提交更改<code>git commit -am "commit message"</code></li>
+<li>删除分支<code>git branch -D master</code></li>
+<li>将当前分支重命名<code>git branch -m master</code></li>
+<li>最后，强制更新存储库。<code>git push -f origin master</code></li>
+</ol>
 <h2 id=分支>分支</h2>
 <h3 id=原则>原则</h3>
 <ul>
