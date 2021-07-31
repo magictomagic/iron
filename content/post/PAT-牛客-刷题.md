@@ -1,10 +1,10 @@
 ---
 title: "PAT 牛客 刷题"
-date: 2021-01-11T01:37:56+08:00
-lastmod: 2021-01-11T01:37:56+08:00
+date: 2021-01-03T01:37:56+08:00
+lastmod: 2021-01-03T01:37:56+08:00
 draft: false
-tags: ["PAT", "牛客", "刷题"]
-categories: ["notes", "C/C++"]
+tags: ["PAT", "牛客", "刷题", "C/C++"]
+categories: ["notes"]
 author: "magictomagic"
 contentCopyright: '<a rel="license noopener" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License" target="_blank">Creative Commons Attribution-ShareAlike License</a>'
 ---
