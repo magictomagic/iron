@@ -1,0 +1,1985 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>毕设 流水账 - Iron Age</title>
+<meta name=renderer content="webkit">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=cache-control content="no-transform">
+<meta http-equiv=cache-control content="no-siteapp">
+<meta name=theme-color content="#f8f5ec">
+<meta name=msapplication-navbutton-color content="#f8f5ec">
+<meta name=apple-mobile-web-app-capable content="yes">
+<meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec">
+<meta name=author content="magictomagic"><meta name=description content="设计架构图 上述内容实现以后，可以优化的地方是 将新拿到的文本也进行聚类，增量式聚类，双向绑定，不断优化异常检测的模型。 对已经分类过的文本不再用"><meta name=keywords content="Hugo,theme,even">
+<meta name=generator content="Hugo 0.86.1 with theme even">
+<link rel=canonical href=https://iron.magictomagic.com/post/%E6%AF%95%E8%AE%BE-%E6%B5%81%E6%B0%B4%E8%B4%A6/>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=manifest href=/manifest.json>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
+<link href=/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css rel=stylesheet>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous>
+<meta property="og:title" content="毕设 流水账">
+<meta property="og:description" content="设计架构图 上述内容实现以后，可以优化的地方是 将新拿到的文本也进行聚类，增量式聚类，双向绑定，不断优化异常检测的模型。 对已经分类过的文本不再用">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://iron.magictomagic.com/post/%E6%AF%95%E8%AE%BE-%E6%B5%81%E6%B0%B4%E8%B4%A6/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2021-04-29T01:37:56+08:00">
+<meta property="article:modified_time" content="2021-04-29T01:37:56+08:00">
+<meta itemprop=name content="毕设 流水账">
+<meta itemprop=description content="设计架构图 上述内容实现以后，可以优化的地方是 将新拿到的文本也进行聚类，增量式聚类，双向绑定，不断优化异常检测的模型。 对已经分类过的文本不再用"><meta itemprop=datePublished content="2021-04-29T01:37:56+08:00">
+<meta itemprop=dateModified content="2021-04-29T01:37:56+08:00">
+<meta itemprop=wordCount content="8359">
+<meta itemprop=keywords content="毕设,Python,Node.js,机器学习,爬虫,异常检测,"><meta name=twitter:card content="summary">
+<meta name=twitter:title content="毕设 流水账">
+<meta name=twitter:description content="设计架构图 上述内容实现以后，可以优化的地方是 将新拿到的文本也进行聚类，增量式聚类，双向绑定，不断优化异常检测的模型。 对已经分类过的文本不再用"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]-->
+</head>
+<body>
+<div id=mobile-navbar class=mobile-navbar>
+<div class=mobile-header-logo>
+<a href=/ class=logo>Iron</a>
+</div>
+<div class=mobile-navbar-icon>
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+<nav id=mobile-menu class="mobile-menu slideout-menu">
+<ul class=mobile-menu-list>
+<a href=/>
+<li class=mobile-menu-item>Home</li>
+</a><a href=/post/>
+<li class=mobile-menu-item>Archives</li>
+</a><a href=/tags/>
+<li class=mobile-menu-item>Tags</li>
+</a><a href=/categories/>
+<li class=mobile-menu-item>Categories</li>
+</a>
+</ul>
+</nav>
+<div class=container id=mobile-panel>
+<header id=header class=header>
+<div class=logo-wrapper>
+<a href=/ class=logo>Iron</a>
+</div>
+<nav class=site-navbar>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a class=menu-item-link href=/>Home</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/post/>Archives</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/tags/>Tags</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/categories/>Categories</a>
+</li>
+</ul>
+</nav>
+</header>
+<main id=main class=main>
+<div class=content-wrapper>
+<div id=content class=content>
+<article class=post>
+<header class=post-header>
+<h1 class=post-title>毕设 流水账</h1>
+<div class=post-meta>
+<span class=post-time> 2021-04-29 </span>
+<div class=post-category>
+<a href=/categories/exp/> exp </a>
+</div>
+</div>
+</header>
+<div class=post-toc id=post-toc>
+<h2 class=post-toc-title>Contents</h2>
+<div class="post-toc-content always-active">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#设计架构图>设计架构图</a></li>
+<li><a href=#爬取清洗持久化存储数据>爬取，清洗，持久化存储数据</a>
+<ul>
+<li><a href=#利用selenium获取进入评论网页的链接>利用selenium获取进入评论网页的链接</a>
+<ul>
+<li><a href=#链接获取code>链接获取(code)</a></li>
+<li><a href=#链接转换code>链接转换(code)</a></li>
+</ul>
+</li>
+<li><a href=#获取评论>获取评论</a>
+<ul>
+<li><a href=#以逸待劳>以逸待劳</a></li>
+<li><a href=#爬取清洗并持久化存储被评论的文本信息code>爬取清洗并持久化存储被评论的文本信息(code)</a></li>
+<li><a href=#爬取并持久化存储评论别人的文本信息code>爬取并持久化存储评论别人的文本信息(code)</a></li>
+</ul>
+</li>
+<li><a href=#数据处理>数据处理</a>
+<ul>
+<li><a href=#数据库设计>数据库设计</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#异常检测算法第一层>异常检测算法第一层</a>
+<ul>
+<li><a href=#算法选择>算法选择</a></li>
+<li><a href=#划分任务弃用>划分任务(弃用)</a></li>
+<li><a href=#实现需求>实现需求</a>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href=#继续实现需求>继续实现需求</a></li>
+<li><a href=#坑>坑</a>
+<ul>
+<li><a href=#redis-迁移>Redis 迁移</a></li>
+<li><a href=#内存不够>内存不够</a></li>
+<li><a href=#linux-空间用完不要关机保存之前写的代码再继续操作>Linux 空间用完不要关机，保存之前写的代码，再继续操作</a></li>
+</ul>
+</li>
+<li><a href=#再次划分任务正在进行的工作之后要做的实现的需求>再次划分任务(正在进行的工作，之后要做的实现的需求)</a></li>
+<li><a href=#实现坑后需求>实现坑后需求</a></li>
+</ul>
+</li>
+<li><a href=#异常检测算法第二层>异常检测算法第二层</a>
+<ul>
+<li><a href=#聚类>聚类</a></li>
+<li><a href=#调参>调参</a></li>
+</ul>
+</li>
+<li><a href=#将网页评论传到后端>将网页评论传到后端</a>
+<ul>
+<li><a href=#划分任务>划分任务</a></li>
+<li><a href=#js脚本抓取评论>js脚本抓取评论</a>
+<ul>
+<li><a href=#选一个业务场景>选一个业务场景</a></li>
+<li><a href=#分析源码>分析源码</a></li>
+<li><a href=#编写脚本>编写脚本</a></li>
+<li><a href=#效果>效果</a></li>
+</ul>
+</li>
+<li><a href=#前后端通信>前后端通信</a>
+<ul>
+<li><a href=#前端送数据到后端>前端送数据到后端</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href=#前后端交互>前后端交互</a>
+<ul>
+<li><a href=#设计思路>设计思路</a></li>
+<li><a href=#打通-nodejs-和-python-的任督二脉>打通 Node.js 和 Python 的任督二脉</a>
+<ul>
+<li><a href=#练习>练习</a></li>
+<li><a href=#博客>博客</a></li>
+</ul>
+</li>
+<li><a href=#效果-1>效果</a></li>
+<li><a href=#打通-nodejs-和前端的任督二脉>打通 Node.js 和前端的任督二脉</a></li>
+</ul>
+</li>
+<li><a href=#cicd-持续集成>CI/CD 持续集成</a>
+<ul>
+<li><a href=#git-action>Git Action</a></li>
+</ul>
+</li>
+<li><a href=#经验>经验</a></li>
+</ul>
+</nav>
+</div>
+</div>
+<div class=post-content>
+<h1 id=设计架构图>设计架构图</h1>
+<p><img src=../img/dpArchitecture.png alt=未命名文件></p>
+<p>上述内容实现以后，可以优化的地方是</p>
+<ul>
+<li><input disabled type=checkbox> 将新拿到的文本也进行聚类，增量式聚类，双向绑定，不断优化异常检测的模型。</li>
+<li><input disabled type=checkbox> 对已经分类过的文本不再用模型进行异常检测了，直接hash返回是否删除</li>
+<li><input disabled type=checkbox> 当用户访问量大时，此架构失效。需要将 Redis 分出来独立作缓存，可能要用到分布式架构。已经预测过的是否是垃圾评论的数据用 Mysql 存，确保服务器内存够用</li>
+</ul>
+<h1 id=爬取清洗持久化存储数据>爬取，清洗，持久化存储数据</h1>
+<blockquote>
+<p>省略部分细节，例如对数据库的 合并，拆分 等。</p>
+<p>不喜求喷。</p>
+</blockquote>
+<h2 id=利用selenium获取进入评论网页的链接>利用selenium获取进入评论网页的链接</h2>
+<p>进入 <a href=https://m.weibo.cn/>https://m.weibo.cn/</a> 后，不断将网页向下滚动，获取动态加载的内容，利用redis的set去重，最后获得两种有用的链接。一种形如 <code>/detail/213113123123124</code>，一种是包含中文字符的链接（例如：https://m.weibo.cn/search?containerid=231522type%3D1%26t%3D10%26q%3D%23%E6%88%91%E7%9A%84%E5%B0%8F%E7%A1%AE%E5%B9%B8%23&isnewpage=1&luicode=10000011&lfid=102803），需要进入链接对应网页后点击首个评论，之后链接便转换为前者。</p>
+<p>由于 链接地址从前者映射到后者 是js动态生成的，而js源码又看得我脑阔疼，也看不出。所以之后通过selenium将后者转换为前者，之后合并两份链接，统一处理。</p>
+<h3 id=链接获取code>链接获取(code)</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>from</span> <span class=nn>selenium</span> <span class=kn>import</span> <span class=n>webdriver</span>
+<span class=kn>import</span> <span class=nn>time</span>
+<span class=kn>import</span> <span class=nn>re</span>
+<span class=kn>from</span> <span class=nn>lxml</span> <span class=kn>import</span> <span class=n>etree</span>
+<span class=kn>import</span> <span class=nn>redis</span>
+<span class=n>option</span> <span class=o>=</span> <span class=n>webdriver</span><span class=o>.</span><span class=n>ChromeOptions</span><span class=p>()</span>
+<span class=n>option</span><span class=o>.</span><span class=n>add_argument</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;--user-data-dir=D:\ChromeUserData&#39;</span><span class=p>)</span>
+<span class=n>wd</span> <span class=o>=</span> <span class=n>webdriver</span><span class=o>.</span><span class=n>Chrome</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;d:\chromedriver.exe&#39;</span><span class=p>,</span> <span class=n>options</span><span class=o>=</span><span class=n>option</span><span class=p>)</span>
+<span class=n>wd</span><span class=o>.</span><span class=n>implicitly_wait</span><span class=p>(</span><span class=mi>5</span><span class=p>)</span>
+<span class=n>wd</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s1>&#39;https://m.weibo.cn/&#39;</span><span class=p>)</span>
+<span class=n>wd</span><span class=o>.</span><span class=n>maximize_window</span><span class=p>()</span>
+<span class=n>scrapied</span> <span class=o>=</span> <span class=nb>set</span><span class=p>()</span>
+<span class=n>detail_link</span> <span class=o>=</span> <span class=p>[]</span>
+<span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>2</span><span class=p>)</span>
+<span class=n>pool</span> <span class=o>=</span> <span class=n>redis</span><span class=o>.</span><span class=n>ConnectionPool</span><span class=p>(</span><span class=n>host</span><span class=o>=</span><span class=s1>&#39;localhost&#39;</span><span class=p>,</span> <span class=n>port</span><span class=o>=</span><span class=mi>6379</span><span class=p>,</span> <span class=n>decode_responses</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+<span class=n>r</span> <span class=o>=</span> <span class=n>redis</span><span class=o>.</span><span class=n>Redis</span><span class=p>(</span><span class=n>host</span><span class=o>=</span><span class=s1>&#39;localhost&#39;</span><span class=p>,</span> <span class=n>port</span><span class=o>=</span><span class=mi>6379</span><span class=p>,</span> <span class=n>decode_responses</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+<span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+    <span class=n>wd</span><span class=o>.</span><span class=n>execute_script</span><span class=p>(</span><span class=s2>&#34;window.scrollBy(0,3000)&#34;</span><span class=p>)</span>
+    <span class=n>TIMES</span> <span class=o>=</span> <span class=n>TIMES</span> <span class=o>+</span> <span class=mi>1</span>
+    <span class=n>html</span> <span class=o>=</span> <span class=n>wd</span><span class=o>.</span><span class=n>page_source</span>
+    <span class=n>selector</span> <span class=o>=</span> <span class=n>etree</span><span class=o>.</span><span class=n>HTML</span><span class=p>(</span><span class=n>html</span><span class=p>)</span>
+    <span class=n>list_m</span> <span class=o>=</span> <span class=n>selector</span><span class=o>.</span><span class=n>xpath</span><span class=p>(</span><span class=s1>&#39;//*[@id=&#34;app&#34;]/div[1]/div[2]/div[2]/div&#39;</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=n>list_m</span><span class=p>))</span>
+    <span class=k>for</span> <span class=n>raw_link</span> <span class=ow>in</span> <span class=n>list_m</span><span class=p>:</span>
+        <span class=n>link</span> <span class=o>=</span> <span class=n>raw_link</span><span class=o>.</span><span class=n>xpath</span><span class=p>(</span><span class=s1>&#39;./div/div/article/div/div/div[1]/a/@href&#39;</span><span class=p>)</span>
+        <span class=k>if</span> <span class=nb>len</span><span class=p>(</span><span class=n>link</span><span class=p>)</span> <span class=o>&gt;=</span> <span class=mi>1</span><span class=p>:</span>
+            <span class=n>link</span> <span class=o>=</span> <span class=n>link</span><span class=p>[</span><span class=mi>0</span><span class=p>]</span>
+        <span class=k>else</span><span class=p>:</span>
+            <span class=n>link</span> <span class=o>=</span> <span class=kc>None</span>
+        <span class=n>link</span> <span class=o>=</span> <span class=nb>str</span><span class=p>(</span><span class=n>link</span><span class=p>)</span>
+        <span class=k>if</span> <span class=n>re</span><span class=o>.</span><span class=n>match</span><span class=p>(</span><span class=s1>&#39;/status&#39;</span><span class=p>,</span> <span class=n>link</span><span class=p>):</span>
+            <span class=n>r</span><span class=o>.</span><span class=n>sadd</span><span class=p>(</span><span class=s1>&#39;detail&#39;</span><span class=p>,</span> <span class=n>link</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s1>&#39;/&#39;</span><span class=p>)[</span><span class=mi>2</span><span class=p>])</span>
+        <span class=k>elif</span> <span class=nb>len</span><span class=p>(</span><span class=n>link</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s1>&#39;/&#39;</span><span class=p>))</span> <span class=o>&gt;</span> <span class=mi>3</span> <span class=ow>and</span> <span class=n>link</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s1>&#39;/&#39;</span><span class=p>)[</span><span class=mi>2</span><span class=p>]</span> <span class=o>==</span> <span class=s2>&#34;m.weibo.cn&#34;</span><span class=p>:</span>
+            <span class=n>r</span><span class=o>.</span><span class=n>sadd</span><span class=p>(</span><span class=s1>&#39;complex&#39;</span><span class=p>,</span> <span class=n>link</span><span class=p>)</span>
+        <span class=k>else</span><span class=p>:</span>
+            <span class=nb>print</span><span class=p>(</span><span class=n>link</span><span class=p>)</span>
+    <span class=n>wd</span><span class=o>.</span><span class=n>execute_script</span><span class=p>(</span><span class=s2>&#34;window.scrollBy(0,6000)&#34;</span><span class=p>)</span>
+    <span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>2</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=效果二瞥>效果二瞥</h4>
+<p><img src=../img/diploma/data_details.png alt><img src=../img/diploma/data_complex.png alt></p>
+<h3 id=链接转换code>链接转换(code)</h3>
+<blockquote>
+<p>写得很丑，三个账号轮流切换，操纵js点击，数据解析，都在中间件里了，其它地方的代码不贴了，理解万岁。</p>
+</blockquote>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>process_response</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>request</span><span class=p>,</span> <span class=n>response</span><span class=p>,</span> <span class=n>spider</span><span class=p>):</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;spider.which_option: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>spider</span><span class=o>.</span><span class=n>which_option</span><span class=p>)</span> <span class=o>+</span> <span class=s2>&#34;  num: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>spider</span><span class=o>.</span><span class=n>p_num</span><span class=p>)</span><span class=o>+</span> <span class=s2>&#34;  remain: &#34;</span> <span class=o>+</span>
+                  <span class=nb>str</span><span class=p>(</span><span class=n>spider</span><span class=o>.</span><span class=n>r</span><span class=o>.</span><span class=n>scard</span><span class=p>(</span><span class=s2>&#34;union_3_9&#34;</span><span class=p>))</span> <span class=o>+</span> <span class=s2>&#34;  no_button_or_formatted: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>spider</span><span class=o>.</span><span class=n>no_button</span><span class=p>))</span>
+            <span class=k>if</span> <span class=n>spider</span><span class=o>.</span><span class=n>p_num</span> <span class=o>%</span> <span class=mi>34</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+                <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;sleeping...&#34;</span><span class=p>)</span>
+                <span class=n>sleep</span><span class=p>(</span><span class=mi>1000</span><span class=p>)</span>
+            <span class=k>if</span> <span class=n>spider</span><span class=o>.</span><span class=n>p_num</span> <span class=o>%</span> <span class=mi>10</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+                <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;have scrapped: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>spider</span><span class=o>.</span><span class=n>p_num</span><span class=p>))</span>
+                <span class=k>if</span> <span class=n>spider</span><span class=o>.</span><span class=n>which_option</span> <span class=o>==</span> <span class=mi>2</span><span class=p>:</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>bro</span><span class=o>.</span><span class=n>quit</span><span class=p>()</span>
+                    <span class=n>option2</span> <span class=o>=</span> <span class=n>webdriver</span><span class=o>.</span><span class=n>ChromeOptions</span><span class=p>()</span>
+                    <span class=n>option2</span><span class=o>.</span><span class=n>add_argument</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;--user-data-dir=D:\ChromeUserData2&#39;</span><span class=p>)</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>bro</span> <span class=o>=</span> <span class=n>webdriver</span><span class=o>.</span><span class=n>Chrome</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;d:\chromedriver.exe&#39;</span><span class=p>,</span> <span class=n>options</span><span class=o>=</span><span class=n>option2</span><span class=p>)</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>bro</span><span class=o>.</span><span class=n>implicitly_wait</span><span class=p>(</span><span class=mi>5</span><span class=p>)</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>bro</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>request</span><span class=o>.</span><span class=n>url</span><span class=p>)</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>which_option</span> <span class=o>=</span> <span class=mi>1</span>
+                <span class=k>elif</span> <span class=n>spider</span><span class=o>.</span><span class=n>which_option</span> <span class=o>==</span> <span class=mi>1</span><span class=p>:</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>bro</span><span class=o>.</span><span class=n>quit</span><span class=p>()</span>
+                    <span class=n>option1</span> <span class=o>=</span> <span class=n>webdriver</span><span class=o>.</span><span class=n>ChromeOptions</span><span class=p>()</span>
+                    <span class=n>option1</span><span class=o>.</span><span class=n>add_argument</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;--user-data-dir=D:\ChromeUserData1&#39;</span><span class=p>)</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>bro</span> <span class=o>=</span> <span class=n>webdriver</span><span class=o>.</span><span class=n>Chrome</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;d:\chromedriver.exe&#39;</span><span class=p>,</span> <span class=n>options</span><span class=o>=</span><span class=n>option1</span><span class=p>)</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>bro</span><span class=o>.</span><span class=n>implicitly_wait</span><span class=p>(</span><span class=mi>5</span><span class=p>)</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>bro</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>request</span><span class=o>.</span><span class=n>url</span><span class=p>)</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>which_option</span> <span class=o>=</span> <span class=mi>0</span>
+                <span class=k>else</span><span class=p>:</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>bro</span><span class=o>.</span><span class=n>quit</span><span class=p>()</span>
+                    <span class=n>option</span> <span class=o>=</span> <span class=n>webdriver</span><span class=o>.</span><span class=n>ChromeOptions</span><span class=p>()</span>
+                    <span class=n>option</span><span class=o>.</span><span class=n>add_argument</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;--user-data-dir=D:\ChromeUserData&#39;</span><span class=p>)</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>bro</span> <span class=o>=</span> <span class=n>webdriver</span><span class=o>.</span><span class=n>Chrome</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;d:\chromedriver.exe&#39;</span><span class=p>,</span> <span class=n>options</span><span class=o>=</span><span class=n>option</span><span class=p>)</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>bro</span><span class=o>.</span><span class=n>implicitly_wait</span><span class=p>(</span><span class=mi>5</span><span class=p>)</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>bro</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>request</span><span class=o>.</span><span class=n>url</span><span class=p>)</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>which_option</span> <span class=o>=</span> <span class=mi>2</span>
+            <span class=k>else</span><span class=p>:</span>
+                <span class=n>spider</span><span class=o>.</span><span class=n>bro</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>request</span><span class=o>.</span><span class=n>url</span><span class=p>)</span>
+            <span class=n>sleep</span><span class=p>(</span><span class=mi>2</span><span class=p>)</span>
+            <span class=k>try</span><span class=p>:</span>
+                <span class=n>button</span> <span class=o>=</span> <span class=n>spider</span><span class=o>.</span><span class=n>bro</span><span class=o>.</span><span class=n>find_element_by_xpath</span><span class=p>(</span>
+                    <span class=s1>&#39;//*[@id=&#34;app&#34;]/div[1]/div[1]/div[4]//div/footer/div[2]/i | //*[@id=&#34;app&#34;]/div[1]/div[1]/div[5]//div/footer/div[2]/i&#39;</span><span class=p>)</span>
+            <span class=k>except</span><span class=p>:</span>
+                <span class=n>button</span> <span class=o>=</span> <span class=kc>None</span>
+            <span class=k>if</span> <span class=n>button</span><span class=p>:</span>
+                <span class=n>spider</span><span class=o>.</span><span class=n>bro</span><span class=o>.</span><span class=n>execute_script</span><span class=p>(</span><span class=s1>&#39;arguments[0].click();&#39;</span><span class=p>,</span> <span class=n>button</span><span class=p>)</span>
+            <span class=k>else</span><span class=p>:</span>
+                <span class=k>try</span><span class=p>:</span>
+                    <span class=nb>print</span><span class=p>(</span><span class=n>spider</span><span class=o>.</span><span class=n>bro</span><span class=o>.</span><span class=n>find_element_by_xpath</span><span class=p>(</span><span class=s1>&#39;/html/body/div/p/text()&#39;</span><span class=p>)</span><span class=o>.</span><span class=n>extract_first</span><span class=p>())</span>
+                    <span class=n>exit</span><span class=p>()</span>
+                <span class=k>except</span><span class=p>:</span>
+                    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;no button&#34;</span><span class=p>)</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>r</span><span class=o>.</span><span class=n>srem</span><span class=p>(</span><span class=n>spider</span><span class=o>.</span><span class=n>db_c</span><span class=p>,</span> <span class=n>request</span><span class=o>.</span><span class=n>url</span><span class=p>)</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>r</span><span class=o>.</span><span class=n>sadd</span><span class=p>(</span><span class=s1>&#39;no_button&#39;</span><span class=p>,</span> <span class=n>request</span><span class=o>.</span><span class=n>url</span><span class=p>)</span>
+                    <span class=n>spider</span><span class=o>.</span><span class=n>no_button</span> <span class=o>=</span> <span class=n>spider</span><span class=o>.</span><span class=n>no_button</span> <span class=o>+</span> <span class=mi>1</span>
+                    <span class=k>return</span> <span class=n>response</span>
+            <span class=n>sleep</span><span class=p>(</span><span class=mi>2</span><span class=p>)</span>
+            <span class=n>spider</span><span class=o>.</span><span class=n>p_num</span> <span class=o>=</span> <span class=n>spider</span><span class=o>.</span><span class=n>p_num</span> <span class=o>+</span> <span class=mi>1</span>
+            <span class=n>link</span> <span class=o>=</span> <span class=nb>str</span><span class=p>(</span><span class=n>spider</span><span class=o>.</span><span class=n>bro</span><span class=o>.</span><span class=n>current_url</span><span class=p>)</span>
+            <span class=n>ll</span> <span class=o>=</span> <span class=n>link</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s1>&#39;/&#39;</span><span class=p>)</span>
+            <span class=k>if</span> <span class=nb>len</span><span class=p>(</span><span class=n>ll</span><span class=p>)</span> <span class=o>&gt;=</span> <span class=mi>5</span> <span class=ow>and</span> <span class=n>ll</span><span class=p>[</span><span class=mi>3</span><span class=p>]</span> <span class=o>==</span> <span class=s1>&#39;detail&#39;</span><span class=p>:</span>
+                <span class=n>spider</span><span class=o>.</span><span class=n>r</span><span class=o>.</span><span class=n>sadd</span><span class=p>(</span><span class=s1>&#39;c_detail&#39;</span><span class=p>,</span> <span class=n>ll</span><span class=p>[</span><span class=o>-</span><span class=mi>1</span><span class=p>])</span>
+                <span class=n>spider</span><span class=o>.</span><span class=n>r</span><span class=o>.</span><span class=n>srem</span><span class=p>(</span><span class=n>spider</span><span class=o>.</span><span class=n>db_c</span><span class=p>,</span> <span class=n>request</span><span class=o>.</span><span class=n>url</span><span class=p>)</span>
+                <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;spider.bro.current_url: &#34;</span> <span class=o>+</span> <span class=n>link</span><span class=p>)</span>
+            <span class=k>else</span><span class=p>:</span>
+                <span class=c1># 这里直接从数据库中删掉</span>
+                <span class=n>spider</span><span class=o>.</span><span class=n>r</span><span class=o>.</span><span class=n>srem</span><span class=p>(</span><span class=n>spider</span><span class=o>.</span><span class=n>db_c</span><span class=p>,</span> <span class=n>request</span><span class=o>.</span><span class=n>url</span><span class=p>)</span>
+                <span class=n>spider</span><span class=o>.</span><span class=n>no_button</span> <span class=o>=</span> <span class=n>spider</span><span class=o>.</span><span class=n>no_button</span> <span class=o>+</span> <span class=mi>1</span>
+                <span class=nb>print</span><span class=p>(</span><span class=n>link</span><span class=p>)</span>
+            <span class=k>return</span> <span class=n>response</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=效果不瞥>效果不瞥</h4>
+<p><img src alt=不瞥></p>
+<h2 id=获取评论>获取评论</h2>
+<h3 id=以逸待劳>以逸待劳</h3>
+<blockquote>
+<p>没钱，没IP，没账号，~~没脑子，~~只能sleep。。。</p>
+<p>所谓<code>sleep</code>，就是电脑跑，我躺。</p>
+</blockquote>
+<p>因为微博爬的稍微多一点就会被限制，然后就要等个10到20分钟才能继续爬，所以scrapy那个异步的玩意儿没用，异到一半给你个403，然后你还得保留一群没异完的数据来知道自己上次爬到哪儿了，代码量杠杠的，头发萧萧的，效率提升可怜，还不如给爷一个个链接爬，在数据解析那一块直接持久化存储，爬了遇到不是200的，直接一个sleep。当然，可以切换个cookie，或搞两个代理ip试试，如果搞代理的钱给报销就好了，可惜报不得。。爬到结尾遇到ok=0了，说明一条数据完了，把爬过的id在数据库中删掉，相当于保存状态，然后继续下一条。不让它异步，把CONCURRENT_REQUESTS设置为1，感觉拿个框架搞这个有点像高射炮打蚊子。微博需要手机验证码登录真的恶心(比淘宝拿深度学习搞稍微好点)，虽然之后搞个cookie可以解决，鬼想去看源码分析cookie中有没有键是通过时间来验证的，就像有道字典网页版的cookie一样，虽然直接复制cookie在之后爬【被评论的文本】确实有效果。</p>
+<p>微博账号|手机号 少，代理IP仅限翻墙用的VPN，我甚至想 搞个 多个热点、一个wifi、一个VPN 自动切换的脚本，但理智与对自己精力与实力清醒的认识让我放弃了这个冲动。</p>
+<p>人生不易，躺平： 以逸待劳</p>
+<h3 id=爬取清洗并持久化存储被评论的文本信息code>爬取清洗并持久化存储被评论的文本信息(code)</h3>
+<blockquote>
+<p>开始用 requests 做试验，然后 scrapy 实现，结果同样的思路，scrapy 中除了多了这个场景不需要的异步，还出现了一个很诡异的问题，估计是我 cookie 设置没有生效，爬到一半又是弹出登录界面，不过这个报错我 requests 中没遇到过，暂且将这个错误情况收入囊中，给之后的 requests 用。scrapy 框架是死的，requests 库是活的，所以 评论的爬取与持久化存储 用 requests 了。</p>
+<p>写这玩意儿花了我将近一天时间，呜~ 数据量越大，边界条件越复杂，真是【if else try catch 地狱】啊！</p>
+</blockquote>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>requests</span>
+<span class=kn>import</span> <span class=nn>re</span>
+<span class=kn>import</span> <span class=nn>redis</span>
+<span class=kn>import</span> <span class=nn>json</span>
+<span class=kn>from</span> <span class=nn>time</span> <span class=kn>import</span> <span class=n>sleep</span>
+<span class=n>db_key</span> <span class=o>=</span> <span class=s1>&#39;copy_all&#39;</span>
+<span class=n>headers</span> <span class=o>=</span> <span class=p>{</span>
+<span class=s2>&#34;user-agent&#34;</span><span class=p>:</span> <span class=s2>&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36&#34;</span><span class=p>,</span>
+<span class=s2>&#34;cookie&#34;</span><span class=p>:</span> <span class=s2>&#34;WEIBOCN_FROM=1110006030; SUB=_2A25NEV0tDeRhGeBL7lYY9ybFyDiIHXVu-mNlrDV6PUJbkdAKLXbwkW1NRutLlmTowwVwMFvx2VGceNikaFWGhsY8; MLOGIN=1; _T_WM=67795908980; M_WEIBOCN_PARAMS=oid%3D4598439113919494</span><span class=si>%26lu</span><span class=s2>icode%3D20000061</span><span class=si>%26lf</span><span class=s2>id%3D4598439113919494</span><span class=si>%26u</span><span class=s2>icode%3D20000061</span><span class=si>%26f</span><span class=s2>id%3D4598439113919494; XSRF-TOKEN=657a72&#34;</span>
+<span class=p>}</span>
+<span class=n>be_cf_url</span> <span class=o>=</span> <span class=s2>&#34;https://m.weibo.cn/detail/</span><span class=si>{}</span><span class=s2>&#34;</span>
+<span class=n>pool</span> <span class=o>=</span> <span class=n>redis</span><span class=o>.</span><span class=n>ConnectionPool</span><span class=p>(</span><span class=n>host</span><span class=o>=</span><span class=s1>&#39;localhost&#39;</span><span class=p>,</span> <span class=n>port</span><span class=o>=</span><span class=mi>6379</span><span class=p>,</span> <span class=n>decode_responses</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+<span class=n>r</span> <span class=o>=</span> <span class=n>redis</span><span class=o>.</span><span class=n>Redis</span><span class=p>(</span><span class=n>host</span><span class=o>=</span><span class=s1>&#39;localhost&#39;</span><span class=p>,</span> <span class=n>port</span><span class=o>=</span><span class=mi>6379</span><span class=p>,</span> <span class=n>decode_responses</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+<span class=n>id_pool</span> <span class=o>=</span> <span class=n>r</span><span class=o>.</span><span class=n>smembers</span><span class=p>(</span><span class=n>db_key</span><span class=p>)</span>
+<span class=n>continous</span> <span class=o>=</span> <span class=mi>0</span>
+<span class=n>cannot_sum</span> <span class=o>=</span> <span class=mi>0</span>
+<span class=n>interval_controller</span> <span class=o>=</span> <span class=mi>1</span>
+<span class=n>headertimes</span> <span class=o>=</span> <span class=mi>1</span>
+<span class=k>for</span> <span class=n>u_id</span> <span class=ow>in</span> <span class=n>id_pool</span><span class=p>:</span>
+    <span class=n>interval_controller</span> <span class=o>+=</span> <span class=mi>1</span>
+    <span class=k>if</span> <span class=n>interval_controller</span> <span class=o>%</span> <span class=mi>97</span> <span class=o>==</span> <span class=mi>0</span> <span class=ow>or</span> <span class=n>headertimes</span> <span class=o>%</span> <span class=mi>11</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;sleeping......&#34;</span><span class=p>)</span>
+        <span class=n>headertimes</span> <span class=o>=</span> <span class=mi>1</span>
+        <span class=n>interval_controller</span> <span class=o>+=</span> <span class=mi>1</span>
+        <span class=n>sleep</span><span class=p>(</span><span class=mi>1000</span><span class=p>)</span>
+    <span class=n>continous</span> <span class=o>=</span> <span class=mi>0</span>
+    <span class=n>be_c_url</span> <span class=o>=</span> <span class=n>be_cf_url</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>u_id</span><span class=p>)</span>
+    <span class=n>be_res</span> <span class=o>=</span> <span class=n>requests</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>url</span><span class=o>=</span><span class=n>be_c_url</span><span class=p>)</span>
+    <span class=k>if</span> <span class=n>be_res</span><span class=o>.</span><span class=n>content</span> <span class=ow>and</span> <span class=n>be_res</span><span class=o>.</span><span class=n>status_code</span> <span class=o>==</span> <span class=mi>200</span><span class=p>:</span>
+        <span class=n>bec_l</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;&#34;text&#34;:|&#34;textLength&#34;:|&#34;source&#34;:&#39;</span><span class=p>,</span> <span class=n>be_res</span><span class=o>.</span><span class=n>text</span><span class=p>)</span>
+        <span class=k>if</span> <span class=nb>len</span><span class=p>(</span><span class=n>bec_l</span><span class=p>)</span> <span class=o>&lt;</span> <span class=mi>2</span><span class=p>:</span>
+            <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;now that I use headers&#39;</span><span class=p>)</span>
+            <span class=n>headertimes</span> <span class=o>+=</span> <span class=mi>1</span>
+            <span class=n>be_res</span> <span class=o>=</span> <span class=n>requests</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>url</span><span class=o>=</span><span class=n>be_c_url</span><span class=p>,</span> <span class=n>headers</span><span class=o>=</span><span class=n>headers</span><span class=p>)</span>
+            <span class=k>if</span> <span class=n>be_res</span><span class=o>.</span><span class=n>content</span> <span class=ow>and</span> <span class=n>be_res</span><span class=o>.</span><span class=n>status_code</span> <span class=o>==</span> <span class=mi>200</span><span class=p>:</span>
+                <span class=n>bec_l</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;&#34;text&#34;:|&#34;textLength&#34;:|&#34;source&#34;:&#39;</span><span class=p>,</span> <span class=n>be_res</span><span class=o>.</span><span class=n>text</span><span class=p>)</span>
+            <span class=k>else</span><span class=p>:</span>
+                <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;how come???  &#34;</span> <span class=o>+</span> <span class=n>be_c_url</span><span class=p>)</span>
+                <span class=n>exit</span><span class=p>()</span>
+            <span class=k>if</span> <span class=nb>len</span><span class=p>(</span><span class=n>bec_l</span><span class=p>)</span> <span class=o>&lt;</span> <span class=mi>2</span><span class=p>:</span>
+                <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;napping...&#34;</span><span class=p>)</span>
+                <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;odd: &#34;</span> <span class=o>+</span> <span class=n>be_c_url</span><span class=p>)</span>
+                <span class=n>r</span><span class=o>.</span><span class=n>sadd</span><span class=p>(</span><span class=s2>&#34;odd_link&#34;</span><span class=p>,</span> <span class=n>u_id</span><span class=p>)</span>
+                <span class=k>with</span> <span class=nb>open</span><span class=p>(</span><span class=s1>&#39;assert_login_required.html&#39;</span><span class=p>,</span> <span class=s1>&#39;w+&#39;</span><span class=p>,</span> <span class=n>encoding</span><span class=o>=</span><span class=s1>&#39;utf-8&#39;</span><span class=p>)</span> <span class=k>as</span> <span class=n>f</span><span class=p>:</span>
+                    <span class=n>f</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=n>be_res</span><span class=o>.</span><span class=n>text</span><span class=p>)</span>
+                <span class=n>sleep</span><span class=p>(</span><span class=mi>4</span><span class=p>)</span>
+                <span class=k>continue</span>
+        <span class=k>else</span><span class=p>:</span>
+            <span class=n>be_emoji_contents</span> <span class=o>=</span> <span class=n>bec_l</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span>  <span class=c1># 1 big</span>
+            <span class=n>be_emoji</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>findall</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;alt=\[(.+?)\]+&#39;</span><span class=p>,</span> <span class=n>be_emoji_contents</span><span class=p>)</span>
+            <span class=n>be_contents</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>findall</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;[\u4e00-\u9fa5]+&#39;</span><span class=p>,</span> <span class=n>be_emoji_contents</span><span class=p>)</span>
+            <span class=n>author</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;&#34;profile_image_url&#34;:|&#34;screen_name&#34;:&#39;</span><span class=p>,</span> <span class=n>be_res</span><span class=o>.</span><span class=n>text</span><span class=p>)[</span><span class=mi>1</span><span class=p>]</span><span class=o>.</span><span class=n>strip</span><span class=p>()[</span><span class=mi>1</span><span class=p>:</span> <span class=o>-</span><span class=mi>2</span><span class=p>]</span>
+            <span class=n>be_co_list</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;&#34;reposts_count&#34;:|&#34;comments_count&#34;:|&#34;attitudes_count&#34;:|&#34;pending_approval_count&#34;:&#39;</span><span class=p>,</span> <span class=n>be_res</span><span class=o>.</span><span class=n>text</span><span class=p>)</span>
+            <span class=n>be_co_retweet</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>findall</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;\d+&#39;</span><span class=p>,</span> <span class=n>be_co_list</span><span class=p>[</span><span class=o>-</span><span class=mi>4</span><span class=p>])[</span><span class=mi>0</span><span class=p>]</span>
+            <span class=n>be_co_comments</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>findall</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;\d+&#39;</span><span class=p>,</span> <span class=n>be_co_list</span><span class=p>[</span><span class=o>-</span><span class=mi>3</span><span class=p>])[</span><span class=mi>0</span><span class=p>]</span>
+            <span class=n>be_co_like</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>findall</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;\d+&#39;</span><span class=p>,</span> <span class=n>be_co_list</span><span class=p>[</span><span class=o>-</span><span class=mi>2</span><span class=p>])[</span><span class=mi>0</span><span class=p>]</span>
+        <span class=n>be_emoji_ser</span> <span class=o>=</span> <span class=s1>&#39;|&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>be_emoji</span><span class=p>)</span>
+        <span class=n>be_contents_ser</span> <span class=o>=</span> <span class=s1>&#39;|&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>be_contents</span><span class=p>)</span>
+        <span class=n>obj</span> <span class=o>=</span> <span class=p>{</span><span class=s2>&#34;id&#34;</span><span class=p>:</span> <span class=n>u_id</span><span class=p>,</span> <span class=s2>&#34;be_co_retweet&#34;</span><span class=p>:</span> <span class=n>be_co_retweet</span><span class=p>,</span> <span class=s2>&#34;be_co_comments&#34;</span><span class=p>:</span> <span class=n>be_co_comments</span><span class=p>,</span>
+               <span class=s2>&#34;be_co_like&#34;</span><span class=p>:</span> <span class=n>be_co_like</span><span class=p>,</span> <span class=s2>&#34;author&#34;</span><span class=p>:</span> <span class=n>author</span><span class=p>,</span> <span class=s2>&#34;be_emoji&#34;</span><span class=p>:</span> <span class=n>be_emoji_ser</span><span class=p>,</span> <span class=s2>&#34;be_contents&#34;</span><span class=p>:</span> <span class=n>be_contents_ser</span><span class=p>}</span>
+        <span class=n>value</span> <span class=o>=</span> <span class=n>json</span><span class=o>.</span><span class=n>dumps</span><span class=p>(</span><span class=n>obj</span><span class=p>)</span>
+        <span class=k>if</span> <span class=n>r</span><span class=o>.</span><span class=n>hset</span><span class=p>(</span><span class=s2>&#34;vb_article&#34;</span><span class=p>,</span> <span class=n>u_id</span><span class=p>,</span> <span class=n>value</span><span class=p>):</span>
+            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;remain: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>r</span><span class=o>.</span><span class=n>scard</span><span class=p>(</span><span class=n>db_key</span><span class=p>))</span> <span class=o>+</span> <span class=s2>&#34; | done: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>interval_controller</span> <span class=o>-</span> <span class=mi>1</span><span class=p>)</span> <span class=o>+</span> <span class=s2>&#34; | odd_link: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>r</span><span class=o>.</span><span class=n>scard</span><span class=p>(</span><span class=s2>&#34;odd_link&#34;</span><span class=p>))</span> <span class=o>+</span> <span class=s2>&#34; | saving -&gt; &#34;</span><span class=p>)</span>
+            <span class=nb>print</span><span class=p>(</span><span class=n>value</span><span class=p>)</span>
+        <span class=k>else</span><span class=p>:</span>
+            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;remain: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>r</span><span class=o>.</span><span class=n>scard</span><span class=p>(</span><span class=n>db_key</span><span class=p>))</span> <span class=o>+</span> <span class=s2>&#34; | done: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>interval_controller</span> <span class=o>-</span> <span class=mi>1</span><span class=p>)</span> <span class=o>+</span> <span class=s2>&#34; | odd_link: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>r</span><span class=o>.</span><span class=n>scard</span><span class=p>(</span><span class=s2>&#34;odd_link&#34;</span><span class=p>))</span> <span class=o>+</span> <span class=s2>&#34; | duplicated -&gt; &#34;</span><span class=p>)</span>
+            <span class=nb>print</span><span class=p>(</span><span class=n>value</span><span class=p>)</span>
+        <span class=n>r</span><span class=o>.</span><span class=n>srem</span><span class=p>(</span><span class=n>db_key</span><span class=p>,</span> <span class=n>u_id</span><span class=p>)</span>
+    <span class=k>else</span><span class=p>:</span>
+        <span class=k>try</span><span class=p>:</span>
+            <span class=nb>print</span><span class=p>(</span><span class=n>be_res</span><span class=o>.</span><span class=n>text</span><span class=p>)</span>
+            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;的确把我禁了，呜——&#34;</span><span class=p>)</span>
+        <span class=k>except</span><span class=p>:</span>
+            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;WTF?!&#34;</span><span class=p>)</span>
+        <span class=nb>print</span><span class=p>(</span><span class=n>be_res</span><span class=p>)</span>
+        <span class=n>exit</span><span class=p>()</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=效果一瞥>效果一瞥</h4>
+<blockquote>
+<p>还在爬，先瞥了。</p>
+</blockquote>
+<p><img src=../img/diploma/res_1.png alt></p>
+<h3 id=爬取并持久化存储评论别人的文本信息code>爬取并持久化存储评论别人的文本信息(code)</h3>
+<blockquote>
+<p>这个数据量更大，花半天写完后，就让它跑了。测试了总共有100个id左右，爬了两万多条评论，感觉可以了，就开始漫长的跑爬虫了。不出意外的话，估计跑1天可以拿到40万条评论。让我们拭目以待。</p>
+<p>这玩意儿跑这么长时间只能拿到这么一点数据主要是我账号太少了，只有3个。让我不得不在代码中精打细算，还好没加入保存长得号对应的状态，我试着写过，写到200多行就不敢继续写了，到时候debug不知得花多久时间，不如直接进行下一个链接，把上一个可能爬到一半的放到最后再去爬。</p>
+<p>如果给我的账号数量增加1000倍，也就是给我3000个cookie和UA组（没看源码，估计它的加密涉及UA，所以UA和cookie要对应），增量式，把微博的评论一直爬完，，，不是问题。可惜有不得。</p>
+</blockquote>
+<p>爬到20多万条数据时，出现了证书出错的情况。这个错误给我的感觉是随机发生的。代码有改动。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span><span class=lnt>133
+</span><span class=lnt>134
+</span><span class=lnt>135
+</span><span class=lnt>136
+</span><span class=lnt>137
+</span><span class=lnt>138
+</span><span class=lnt>139
+</span><span class=lnt>140
+</span><span class=lnt>141
+</span><span class=lnt>142
+</span><span class=lnt>143
+</span><span class=lnt>144
+</span><span class=lnt>145
+</span><span class=lnt>146
+</span><span class=lnt>147
+</span><span class=lnt>148
+</span><span class=lnt>149
+</span><span class=lnt>150
+</span><span class=lnt>151
+</span><span class=lnt>152
+</span><span class=lnt>153
+</span><span class=lnt>154
+</span><span class=lnt>155
+</span><span class=lnt>156
+</span><span class=lnt>157
+</span><span class=lnt>158
+</span><span class=lnt>159
+</span><span class=lnt>160
+</span><span class=lnt>161
+</span><span class=lnt>162
+</span><span class=lnt>163
+</span><span class=lnt>164
+</span><span class=lnt>165
+</span><span class=lnt>166
+</span><span class=lnt>167
+</span><span class=lnt>168
+</span><span class=lnt>169
+</span><span class=lnt>170
+</span><span class=lnt>171
+</span><span class=lnt>172
+</span><span class=lnt>173
+</span><span class=lnt>174
+</span><span class=lnt>175
+</span><span class=lnt>176
+</span><span class=lnt>177
+</span><span class=lnt>178
+</span><span class=lnt>179
+</span><span class=lnt>180
+</span><span class=lnt>181
+</span><span class=lnt>182
+</span><span class=lnt>183
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>requests</span>
+<span class=kn>import</span> <span class=nn>json</span>
+<span class=kn>from</span> <span class=nn>time</span> <span class=kn>import</span> <span class=n>sleep</span>
+<span class=kn>import</span> <span class=nn>redis</span>
+<span class=c1># import urllib3</span>
+<span class=c1># urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)</span>
+
+
+<span class=k>def</span> <span class=nf>dialog</span><span class=p>(</span><span class=n>n</span><span class=p>,</span> <span class=n>t</span><span class=p>,</span> <span class=n>l</span><span class=p>,</span> <span class=n>m</span><span class=p>,</span> <span class=n>c</span><span class=p>):</span>
+    <span class=k>with</span> <span class=nb>open</span><span class=p>(</span><span class=s1>&#39;</span><span class=si>{level}</span><span class=s1>_dialog_</span><span class=si>{name}</span><span class=s1>.</span><span class=si>{type}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>name</span><span class=o>=</span><span class=n>n</span><span class=p>,</span> <span class=nb>type</span><span class=o>=</span><span class=n>t</span><span class=p>,</span> <span class=n>level</span><span class=o>=</span><span class=n>l</span><span class=p>),</span> <span class=s1>&#39;</span><span class=si>{method}</span><span class=s1>&#39;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>method</span><span class=o>=</span><span class=n>m</span><span class=p>),</span>
+              <span class=n>encoding</span><span class=o>=</span><span class=s1>&#39;utf-8&#39;</span><span class=p>)</span> <span class=k>as</span> <span class=n>f</span><span class=p>:</span>
+        <span class=n>f</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=n>c</span><span class=p>)</span>
+
+
+<span class=n>pool</span> <span class=o>=</span> <span class=n>redis</span><span class=o>.</span><span class=n>ConnectionPool</span><span class=p>(</span><span class=n>host</span><span class=o>=</span><span class=s1>&#39;localhost&#39;</span><span class=p>,</span> <span class=n>port</span><span class=o>=</span><span class=mi>6379</span><span class=p>,</span> <span class=n>decode_responses</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+<span class=n>r</span> <span class=o>=</span> <span class=n>redis</span><span class=o>.</span><span class=n>Redis</span><span class=p>(</span><span class=n>host</span><span class=o>=</span><span class=s1>&#39;localhost&#39;</span><span class=p>,</span> <span class=n>port</span><span class=o>=</span><span class=mi>6379</span><span class=p>,</span> <span class=n>decode_responses</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+<span class=n>db_id</span> <span class=o>=</span> <span class=s2>&#34;copy_all&#34;</span>
+<span class=n>out</span> <span class=o>=</span> <span class=s2>&#34;out4&#34;</span>
+<span class=n>db_store_comments</span> <span class=o>=</span> <span class=s2>&#34;comment_raw&#34;</span>
+<span class=n>headers</span> <span class=o>=</span> <span class=p>[</span>
+    <span class=p>{</span>
+        <span class=s2>&#34;user-agent&#34;</span><span class=p>:</span> <span class=s2>&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36&#34;</span><span class=p>,</span>
+        <span class=s2>&#34;cookie&#34;</span><span class=p>:</span> <span class=s2>&#34;WEIBOCN_FROM=1110006030; SUB=_2A25NEV0tDeRhGeBL7lYY9ybFyDiIHXVu-mNlrDV6PUJbkdAKLXbwkW1NRutLlmTowwVwMFvx2VGceNikaFWGhsY8; MLOGIN=1; _T_WM=67795908980; M_WEIBOCN_PARAMS=oid%3D4598812490338528</span><span class=si>%26lu</span><span class=s2>icode%3D20000061</span><span class=si>%26lf</span><span class=s2>id%3D4598812490338528; XSRF-TOKEN=6ccdfa&#34;</span>
+    <span class=p>},</span>
+    <span class=p>{</span>
+        <span class=s2>&#34;user-agent&#34;</span><span class=p>:</span> <span class=s2>&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36&#34;</span><span class=p>,</span>
+        <span class=s2>&#34;cookie&#34;</span><span class=p>:</span> <span class=s2>&#34;SUB=_2A25NCGyZDeRhGeFL7lYW8ifKyjuIHXVu83TRrDV6PUJbkdAKLXftkW1NfedyhZeSJiB2FIIkBxvJsYliT6pqVB5r; _T_WM=51270776894; MLOGIN=1; WEIBOCN_FROM=1110006030; M_WEIBOCN_PARAMS=luicode%3D10000011</span><span class=si>%26lf</span><span class=s2>id%3D102803</span><span class=si>%26u</span><span class=s2>icode%3D10000011</span><span class=si>%26f</span><span class=s2>id%3D102803; XSRF-TOKEN=7b2f74&#34;</span>
+    <span class=p>},</span>
+    <span class=p>{</span>
+        <span class=s2>&#34;user-agent&#34;</span><span class=p>:</span> <span class=s2>&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36&#34;</span><span class=p>,</span>
+        <span class=s2>&#34;cookie&#34;</span><span class=p>:</span> <span class=s2>&#34;SUB=_2A25NEfqWDeRhGeFN61EZ8C3FzzuIHXVu_YberDV6PUJbkdANLWelkW1NQJzKAyjB5YSsbaRBCtwFYN7bdNCHez3d; _T_WM=99361324838; XSRF-TOKEN=2da516; WEIBOCN_FROM=1110006030; MLOGIN=1; M_WEIBOCN_PARAMS=luicode%3D20000174</span><span class=si>%26u</span><span class=s2>icode%3D20000174&#34;</span>
+    <span class=p>}</span>
+<span class=p>]</span>
+<span class=n>common_url</span> <span class=o>=</span> <span class=s2>&#34;https://m.weibo.cn/detail/</span><span class=si>{}</span><span class=s2>&#34;</span>
+<span class=n>start_get_uormat</span> <span class=o>=</span> <span class=s2>&#34;https://m.weibo.cn/comments/hotflow?id=</span><span class=si>{id}</span><span class=s2>&amp;mid=</span><span class=si>{id}</span><span class=s2>&amp;max_id_type=0&#34;</span>
+<span class=n>next_ajax_uormat</span> <span class=o>=</span> <span class=s2>&#34;https://m.weibo.cn/comments/hotflow?id=</span><span class=si>{id}</span><span class=s2>&amp;mid=</span><span class=si>{id}</span><span class=s2>&amp;max_id=</span><span class=si>{max_id}</span><span class=s2>&amp;max_id_type=</span><span class=si>{max_id_type}</span><span class=s2>&#34;</span>
+<span class=n>url_pool</span> <span class=o>=</span> <span class=nb>list</span><span class=p>(</span><span class=n>r</span><span class=o>.</span><span class=n>smembers</span><span class=p>(</span><span class=n>db_id</span><span class=p>))</span>
+<span class=n>next_url_flag</span> <span class=o>=</span> <span class=kc>False</span>
+<span class=n>hi</span> <span class=o>=</span> <span class=mi>1</span>
+<span class=n>luck</span> <span class=o>=</span> <span class=mi>0</span>
+<span class=k>for</span> <span class=n>url_id</span> <span class=ow>in</span> <span class=n>url_pool</span><span class=p>:</span>
+    <span class=n>cur_url</span> <span class=o>=</span> <span class=n>start_get_uormat</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=nb>id</span><span class=o>=</span><span class=n>url_id</span><span class=p>)</span>
+    <span class=n>break_big</span> <span class=o>=</span> <span class=kc>False</span>
+    <span class=k>try</span><span class=p>:</span>
+        <span class=n>res</span> <span class=o>=</span> <span class=n>requests</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>url</span><span class=o>=</span><span class=n>cur_url</span><span class=p>,</span> <span class=n>headers</span><span class=o>=</span><span class=n>headers</span><span class=p>[</span><span class=n>hi</span><span class=p>])</span>  <span class=c1>#, verify=False</span>
+    <span class=k>except</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;证书失效1&#34;</span><span class=p>)</span>
+        <span class=n>break_big</span> <span class=o>=</span> <span class=kc>True</span>
+    <span class=n>cnum</span> <span class=o>=</span> <span class=mi>0</span>
+    <span class=n>exp</span> <span class=o>=</span> <span class=mi>0</span>
+    <span class=n>next_url</span> <span class=o>=</span> <span class=kc>None</span>
+    <span class=k>while</span> <span class=kc>True</span><span class=p>:</span>
+        <span class=k>if</span> <span class=n>break_big</span><span class=p>:</span>
+            <span class=k>break</span>
+        <span class=n>tries</span> <span class=o>=</span> <span class=mi>0</span>
+        <span class=n>sp</span> <span class=o>=</span> <span class=mi>0</span>
+        <span class=c1># turn = 0</span>
+        <span class=c1># get res_text or give up</span>
+        <span class=k>while</span> <span class=n>tries</span> <span class=o>&lt;</span> <span class=mi>3</span> <span class=ow>and</span> <span class=n>sp</span> <span class=o>&lt;</span> <span class=mi>5</span><span class=p>:</span>
+            <span class=s1>&#39;&#39;&#39;
+</span><span class=s1>                sp: 403 || 200 but have not got content
+</span><span class=s1>                tries: comments load complete or I give up
+</span><span class=s1>            &#39;&#39;&#39;</span>
+            <span class=k>if</span> <span class=n>res</span><span class=o>.</span><span class=n>status_code</span> <span class=o>==</span> <span class=mi>200</span> <span class=ow>and</span> <span class=n>res</span><span class=o>.</span><span class=n>content</span><span class=p>:</span>  <span class=c1># 分开?</span>
+                <span class=k>try</span><span class=p>:</span>
+                    <span class=n>exp</span> <span class=o>=</span> <span class=mi>0</span>
+                    <span class=n>res_text</span> <span class=o>=</span> <span class=n>json</span><span class=o>.</span><span class=n>loads</span><span class=p>(</span><span class=n>res</span><span class=o>.</span><span class=n>text</span><span class=p>)</span>
+                <span class=k>except</span><span class=p>:</span>
+                    <span class=k>if</span> <span class=n>next_url</span><span class=p>:</span>
+                        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;maybe login required and need to change cookie or just sleep &#34;</span> <span class=o>+</span> <span class=n>next_url</span><span class=p>)</span>
+                    <span class=k>else</span><span class=p>:</span>
+                        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;maybe login required and need to change cookie or just sleep &#34;</span> <span class=o>+</span> <span class=n>cur_url</span><span class=p>)</span>
+                    <span class=n>dialog</span><span class=p>(</span><span class=n>n</span><span class=o>=</span><span class=n>url_id</span><span class=p>,</span> <span class=n>m</span><span class=o>=</span><span class=s1>&#39;w+&#39;</span><span class=p>,</span> <span class=n>l</span><span class=o>=</span><span class=s1>&#39;f_error&#39;</span><span class=p>,</span> <span class=n>c</span><span class=o>=</span><span class=n>res</span><span class=o>.</span><span class=n>text</span><span class=p>,</span> <span class=n>t</span><span class=o>=</span><span class=s1>&#39;html&#39;</span><span class=p>)</span>
+                    <span class=nb>print</span><span class=p>(</span><span class=n>hi</span><span class=p>)</span>
+                    <span class=n>tries</span> <span class=o>+=</span> <span class=mi>1</span>
+                    <span class=n>exp</span> <span class=o>+=</span> <span class=mi>1</span>
+                    <span class=n>sleep</span><span class=p>(</span><span class=mi>2</span> <span class=o>**</span> <span class=p>(</span><span class=n>tries</span> <span class=o>-</span> <span class=mi>1</span><span class=p>))</span>
+                    <span class=k>if</span> <span class=n>exp</span> <span class=o>&gt;</span> <span class=mi>3</span><span class=p>:</span>
+                        <span class=n>exp</span> <span class=o>=</span> <span class=mi>0</span>
+                        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;long sleep...............&#34;</span><span class=p>)</span>
+                        <span class=n>sleep</span><span class=p>(</span><span class=mi>1000</span><span class=p>)</span>
+                    <span class=c1># exit()</span>
+                <span class=k>if</span> <span class=nb>str</span><span class=p>(</span><span class=n>res_text</span><span class=p>[</span><span class=s1>&#39;ok&#39;</span><span class=p>])</span> <span class=o>==</span> <span class=s2>&#34;0&#34;</span><span class=p>:</span>
+                    <span class=n>tt</span> <span class=o>=</span> <span class=mi>2</span> <span class=o>**</span> <span class=n>tries</span>
+                    <span class=n>sleep</span><span class=p>(</span><span class=n>tt</span><span class=p>)</span>
+                    <span class=n>tries</span> <span class=o>+=</span> <span class=mi>1</span>
+                    <span class=k>try</span><span class=p>:</span>
+                        <span class=k>if</span> <span class=n>next_url</span><span class=p>:</span>
+                            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;wait: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>tt</span><span class=p>)</span> <span class=o>+</span> <span class=s2>&#34; | &#34;</span> <span class=o>+</span> <span class=s2>&#34;response json content may be incomplete: &#34;</span> <span class=o>+</span> <span class=n>next_url</span><span class=p>)</span>
+                            <span class=n>res</span> <span class=o>=</span> <span class=n>requests</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>url</span><span class=o>=</span><span class=n>next_url</span><span class=p>,</span> <span class=n>headers</span><span class=o>=</span><span class=n>headers</span><span class=p>[</span><span class=n>hi</span><span class=p>])</span>  <span class=c1>#, verify=False</span>
+                        <span class=k>else</span><span class=p>:</span>
+                            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;wait: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>tt</span><span class=p>)</span> <span class=o>+</span> <span class=s2>&#34; | &#34;</span> <span class=o>+</span> <span class=s2>&#34;response json content may be incomplete: &#34;</span> <span class=o>+</span> <span class=n>cur_url</span><span class=p>)</span>
+                            <span class=n>res</span> <span class=o>=</span> <span class=n>requests</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>url</span><span class=o>=</span><span class=n>cur_url</span><span class=p>,</span> <span class=n>headers</span><span class=o>=</span><span class=n>headers</span><span class=p>[</span><span class=n>hi</span><span class=p>])</span>  <span class=c1>#, verify=False</span>
+                    <span class=k>except</span><span class=p>:</span>
+                        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;证书失效2&#34;</span><span class=p>)</span>
+                        <span class=n>break_big</span> <span class=o>=</span> <span class=kc>True</span>
+                        <span class=k>break</span>
+                <span class=k>else</span><span class=p>:</span>
+                    <span class=k>break</span>
+            <span class=k>else</span><span class=p>:</span>  <span class=c1># 这种情况大概率是请求频繁了</span>
+                <span class=k>if</span> <span class=n>next_url</span><span class=p>:</span>
+                    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;tries: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>tries</span><span class=p>)</span> <span class=o>+</span> <span class=s2>&#34; times | problem: &#34;</span> <span class=o>+</span> <span class=n>next_url</span><span class=p>)</span>
+                <span class=k>else</span><span class=p>:</span>
+                    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;tries: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>tries</span><span class=p>)</span> <span class=o>+</span> <span class=s2>&#34; times | problem: &#34;</span> <span class=o>+</span> <span class=n>cur_url</span><span class=p>)</span>
+                <span class=n>luck</span> <span class=o>+=</span> <span class=mi>1</span>
+                <span class=k>if</span> <span class=n>luck</span> <span class=o>&lt;=</span> <span class=mi>2</span><span class=p>:</span>
+                    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;snap a luck, drop header: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>hi</span><span class=p>))</span>
+                    <span class=n>sleep</span><span class=p>(</span><span class=mi>2</span> <span class=o>**</span> <span class=p>(</span><span class=n>luck</span> <span class=o>-</span> <span class=mi>1</span><span class=p>))</span>
+                <span class=k>elif</span> <span class=n>luck</span> <span class=o>&lt;</span> <span class=nb>len</span><span class=p>(</span><span class=n>headers</span><span class=p>)</span> <span class=o>+</span> <span class=mi>2</span><span class=p>:</span>
+                    <span class=c1># turn += 1</span>
+                    <span class=n>hi</span> <span class=o>+=</span> <span class=mi>1</span>
+                    <span class=n>hi</span> <span class=o>%=</span> <span class=nb>len</span><span class=p>(</span><span class=n>headers</span><span class=p>)</span>
+                    <span class=n>break_big</span> <span class=o>=</span> <span class=kc>True</span>
+                    <span class=k>break</span>
+                <span class=k>else</span><span class=p>:</span>
+                    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;sleep long for luck......&#34;</span><span class=p>)</span>
+                    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;current headers: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>hi</span><span class=p>))</span>
+                    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;done: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=mi>2648</span> <span class=o>-</span> <span class=n>r</span><span class=o>.</span><span class=n>scard</span><span class=p>(</span><span class=n>db_id</span><span class=p>))</span> <span class=o>+</span> <span class=s2>&#34; | comments: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span>
+                        <span class=n>r</span><span class=o>.</span><span class=n>hlen</span><span class=p>(</span><span class=n>db_store_comments</span><span class=p>))</span> <span class=o>+</span> <span class=s2>&#34; | remain: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>r</span><span class=o>.</span><span class=n>scard</span><span class=p>(</span><span class=n>db_id</span><span class=p>))</span> <span class=o>+</span> <span class=s2>&#34; | &#34;</span><span class=p>)</span>
+                    <span class=n>luck</span> <span class=o>=</span> <span class=mi>0</span>
+                    <span class=n>sleep</span><span class=p>(</span><span class=mi>1000</span> <span class=o>-</span> <span class=nb>len</span><span class=p>(</span><span class=n>headers</span><span class=p>))</span>
+                    <span class=k>if</span> <span class=n>sp</span> <span class=o>&gt;</span> <span class=mi>4</span><span class=p>:</span>
+                        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;这还请求频繁？小喇叭！&#34;</span><span class=p>)</span>
+                        <span class=nb>print</span><span class=p>(</span><span class=n>hi</span><span class=p>)</span>
+                        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;done: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=mi>2648</span> <span class=o>-</span> <span class=n>r</span><span class=o>.</span><span class=n>scard</span><span class=p>(</span><span class=n>db_id</span><span class=p>))</span> <span class=o>+</span> <span class=s2>&#34; | comments: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span>
+                            <span class=n>r</span><span class=o>.</span><span class=n>hlen</span><span class=p>(</span><span class=n>db_store_comments</span><span class=p>))</span> <span class=o>+</span> <span class=s2>&#34; | remain: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>r</span><span class=o>.</span><span class=n>scard</span><span class=p>(</span><span class=n>db_id</span><span class=p>))</span> <span class=o>+</span> <span class=s2>&#34; | &#34;</span><span class=p>)</span>
+                        <span class=n>exit</span><span class=p>()</span>
+                    <span class=n>sp</span> <span class=o>+=</span> <span class=mi>1</span>
+        <span class=k>else</span><span class=p>:</span>
+            <span class=k>if</span> <span class=n>next_url</span><span class=p>:</span>
+                <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;ok, I give up: &#34;</span> <span class=o>+</span> <span class=n>next_url</span><span class=p>)</span>
+            <span class=k>else</span><span class=p>:</span>
+                <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;ok, I give up: &#34;</span> <span class=o>+</span> <span class=n>cur_url</span><span class=p>)</span>
+            <span class=n>r</span><span class=o>.</span><span class=n>srem</span><span class=p>(</span><span class=n>db_id</span><span class=p>,</span> <span class=n>url_id</span><span class=p>)</span>
+            <span class=k>break</span>
+        <span class=k>if</span> <span class=n>break_big</span><span class=p>:</span>
+            <span class=k>break</span>
+        <span class=k>try</span><span class=p>:</span>
+            <span class=n>data</span> <span class=o>=</span> <span class=n>res_text</span><span class=p>[</span><span class=s2>&#34;data&#34;</span><span class=p>]</span>
+            <span class=n>data_list</span> <span class=o>=</span> <span class=n>data</span><span class=p>[</span><span class=s2>&#34;data&#34;</span><span class=p>]</span>
+        <span class=k>except</span><span class=p>:</span>
+            <span class=n>dialog</span><span class=p>(</span><span class=n>n</span><span class=o>=</span><span class=n>url_id</span><span class=p>,</span> <span class=n>m</span><span class=o>=</span><span class=s1>&#39;w+&#39;</span><span class=p>,</span> <span class=n>l</span><span class=o>=</span><span class=s1>&#39;u_error&#39;</span><span class=p>,</span> <span class=n>c</span><span class=o>=</span><span class=n>res</span><span class=o>.</span><span class=n>text</span><span class=p>,</span> <span class=n>t</span><span class=o>=</span><span class=s1>&#39;html&#39;</span><span class=p>)</span>
+            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;unexpected response: &#34;</span> <span class=o>+</span> <span class=n>next_url</span><span class=p>)</span>
+            <span class=nb>print</span><span class=p>(</span><span class=n>hi</span><span class=p>)</span>
+            <span class=n>exit</span><span class=p>()</span>
+        <span class=k>for</span> <span class=n>comment</span> <span class=ow>in</span> <span class=n>data_list</span><span class=p>:</span>
+            <span class=n>user_id</span> <span class=o>=</span> <span class=n>comment</span><span class=p>[</span><span class=s1>&#39;user&#39;</span><span class=p>][</span><span class=s1>&#39;id&#39;</span><span class=p>]</span>
+            <span class=n>comment_id</span> <span class=o>=</span> <span class=n>comment</span><span class=p>[</span><span class=s1>&#39;id&#39;</span><span class=p>]</span>
+            <span class=n>comment_key</span> <span class=o>=</span> <span class=nb>str</span><span class=p>(</span><span class=n>user_id</span><span class=p>)</span> <span class=o>+</span> <span class=s2>&#34;|&#34;</span> <span class=o>+</span> <span class=n>comment_id</span>
+            <span class=n>obj</span> <span class=o>=</span> <span class=p>{</span>
+                <span class=s2>&#34;comment_text&#34;</span><span class=p>:</span> <span class=n>comment</span><span class=p>[</span><span class=s1>&#39;text&#39;</span><span class=p>],</span>
+                <span class=s2>&#34;comment_obj_id&#34;</span><span class=p>:</span> <span class=n>url_id</span><span class=p>,</span>
+                <span class=s2>&#34;nickname&#34;</span><span class=p>:</span> <span class=n>comment</span><span class=p>[</span><span class=s1>&#39;user&#39;</span><span class=p>][</span><span class=s1>&#39;screen_name&#39;</span><span class=p>],</span>
+                <span class=s2>&#34;like_count&#34;</span><span class=p>:</span> <span class=n>comment</span><span class=p>[</span><span class=s1>&#39;like_count&#39;</span><span class=p>],</span>
+                <span class=s2>&#34;reply&#34;</span><span class=p>:</span> <span class=n>comment</span><span class=p>[</span><span class=s1>&#39;total_number&#39;</span><span class=p>]</span>
+            <span class=p>}</span>
+            <span class=n>str_obj</span> <span class=o>=</span> <span class=n>json</span><span class=o>.</span><span class=n>dumps</span><span class=p>(</span><span class=n>obj</span><span class=p>)</span>
+            <span class=n>dialog</span><span class=p>(</span><span class=n>n</span><span class=o>=</span><span class=n>out</span><span class=p>,</span> <span class=n>l</span><span class=o>=</span><span class=s2>&#34;print&#34;</span><span class=p>,</span> <span class=n>t</span><span class=o>=</span><span class=s2>&#34;txt&#34;</span><span class=p>,</span> <span class=n>m</span><span class=o>=</span><span class=s2>&#34;a+&#34;</span><span class=p>,</span> <span class=n>c</span><span class=o>=</span><span class=n>comment_key</span> <span class=o>+</span> <span class=s1>&#39;</span><span class=se>\n</span><span class=s1>&#39;</span> <span class=o>+</span> <span class=n>str_obj</span> <span class=o>+</span> <span class=s1>&#39;</span><span class=se>\n\n</span><span class=s1>&#39;</span><span class=p>)</span>
+            <span class=n>r</span><span class=o>.</span><span class=n>hset</span><span class=p>(</span><span class=n>db_store_comments</span><span class=p>,</span> <span class=n>comment_key</span><span class=p>,</span> <span class=n>str_obj</span><span class=p>)</span>
+        <span class=n>cnum</span> <span class=o>+=</span> <span class=nb>len</span><span class=p>(</span><span class=n>data_list</span><span class=p>)</span>
+        <span class=nb>print</span><span class=p>(</span><span class=nb>str</span><span class=p>(</span><span class=n>cnum</span><span class=p>)</span> <span class=o>+</span> <span class=s2>&#34; | &#34;</span> <span class=o>+</span> <span class=n>common_url</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>url_id</span><span class=p>))</span>
+        <span class=n>max_id</span> <span class=o>=</span> <span class=n>data</span><span class=p>[</span><span class=s2>&#34;max_id&#34;</span><span class=p>]</span>
+        <span class=k>if</span> <span class=nb>str</span><span class=p>(</span><span class=n>max_id</span><span class=p>)</span> <span class=o>==</span> <span class=s2>&#34;0&#34;</span><span class=p>:</span>
+            <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;complete&#34;</span><span class=p>)</span>
+            <span class=n>r</span><span class=o>.</span><span class=n>srem</span><span class=p>(</span><span class=n>db_id</span><span class=p>,</span> <span class=n>url_id</span><span class=p>)</span>
+            <span class=k>break</span>
+        <span class=k>else</span><span class=p>:</span>
+            <span class=n>next_url</span> <span class=o>=</span> <span class=n>next_ajax_uormat</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=nb>id</span><span class=o>=</span><span class=n>url_id</span><span class=p>,</span> <span class=n>max_id</span><span class=o>=</span><span class=n>max_id</span><span class=p>,</span> <span class=n>max_id_type</span><span class=o>=</span><span class=n>data</span><span class=p>[</span><span class=s2>&#34;max_id_type&#34;</span><span class=p>])</span>
+            <span class=k>try</span><span class=p>:</span>
+                <span class=n>res</span> <span class=o>=</span> <span class=n>requests</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=n>url</span><span class=o>=</span><span class=n>next_url</span><span class=p>,</span> <span class=n>headers</span><span class=o>=</span><span class=n>headers</span><span class=p>[</span><span class=n>hi</span><span class=p>])</span>  <span class=c1>#, verify=False</span>
+            <span class=k>except</span><span class=p>:</span>
+                <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;证书失效3&#34;</span><span class=p>)</span>
+                <span class=n>break_big</span> <span class=o>=</span> <span class=kc>True</span>
+                <span class=k>break</span>
+    <span class=k>if</span> <span class=n>break_big</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;regardless status, new link please&#34;</span><span class=p>)</span>
+        <span class=n>sleep</span><span class=p>(</span><span class=mi>4</span><span class=p>)</span>
+        <span class=n>url_pool</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>url_id</span><span class=p>)</span>
+    <span class=k>else</span><span class=p>:</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;done: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=mi>2648</span> <span class=o>-</span> <span class=n>r</span><span class=o>.</span><span class=n>scard</span><span class=p>(</span><span class=n>db_id</span><span class=p>))</span> <span class=o>+</span> <span class=s2>&#34; | comments: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>r</span><span class=o>.</span><span class=n>hlen</span><span class=p>(</span><span class=n>db_store_comments</span><span class=p>))</span> <span class=o>+</span> <span class=s2>&#34; | remain: &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>r</span><span class=o>.</span><span class=n>scard</span><span class=p>(</span><span class=n>db_id</span><span class=p>))</span> <span class=o>+</span> <span class=s2>&#34; | &#34;</span><span class=p>)</span>
+        <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;next url please...&#34;</span><span class=p>)</span>
+
+
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=效果半瞥>效果半瞥</h4>
+<blockquote>
+<p>先<del>忍不住</del>放爬了1小时左右时候的截图。</p>
+</blockquote>
+<p><img src=../img/diploma/res_2.png alt></p>
+<h2 id=数据处理>数据处理</h2>
+<h3 id=数据库设计>数据库设计</h3>
+<h4 id=数据项data-item>数据项(data item)</h4>
+<blockquote>
+<p>以hash形式储存在redis中，以前三个id的组合为key。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>comment_id</td>
+<td>该条评论的 ID</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>发出该条评论的 用户ID</td>
+</tr>
+<tr>
+<td>url_id</td>
+<td>该评论评论对象 对应的 网页ID</td>
+</tr>
+<tr>
+<td>comment_text</td>
+<td>该评论的 所有中文文本，包括表情指代词</td>
+</tr>
+<tr>
+<td>comment_emoji</td>
+<td>该评论的 表情指代词(依次顺序出现在comment_text中)</td>
+</tr>
+<tr>
+<td>nickname</td>
+<td>该评论作者 在发出这条评论时所用昵称</td>
+</tr>
+<tr>
+<td>like_count</td>
+<td>该条评论的 被 点赞的次数</td>
+</tr>
+<tr>
+<td>reply_count</td>
+<td>该条评论的 被 回复的次数</td>
+</tr>
+<tr>
+<td>be_co_retweet</td>
+<td>该评论评论对象 被 转发的次数</td>
+</tr>
+<tr>
+<td>be_co_comments</td>
+<td>该评论评论对象 拥有的评论量</td>
+</tr>
+<tr>
+<td>be_co_like</td>
+<td>该评论评论对象 被点赞的次数</td>
+</tr>
+<tr>
+<td>author</td>
+<td>该评论评论对象的 用户名</td>
+</tr>
+<tr>
+<td>be_contents</td>
+<td>该评论评论对象的 所有中文文本</td>
+</tr>
+<tr>
+<td>be_emoji</td>
+<td>该评论评论对象的 表情指代词(依次顺序出现在comment_text中)</td>
+</tr>
+</tbody>
+</table>
+<h4 id=数据库连接与存储code>数据库连接与存储(code)</h4>
+<blockquote>
+<p>实现上述模型</p>
+</blockquote>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>redis</span>
+<span class=kn>import</span> <span class=nn>re</span>
+<span class=kn>import</span> <span class=nn>json</span>
+
+
+<span class=k>def</span> <span class=nf>str_to_json_articles</span><span class=p>(</span><span class=n>article_str</span><span class=p>):</span>
+    <span class=n>o_article</span> <span class=o>=</span> <span class=n>json</span><span class=o>.</span><span class=n>loads</span><span class=p>(</span><span class=n>article_str</span><span class=p>)</span>
+    <span class=n>be_contents</span> <span class=o>=</span> <span class=n>o_article</span><span class=p>[</span><span class=s1>&#39;be_contents&#39;</span><span class=p>]</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s1>&#39;|&#39;</span><span class=p>)</span>
+    <span class=n>be_emoji</span> <span class=o>=</span> <span class=n>o_article</span><span class=p>[</span><span class=s1>&#39;be_emoji&#39;</span><span class=p>]</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s1>&#39;|&#39;</span><span class=p>)</span>
+    <span class=n>o_article</span><span class=p>[</span><span class=s1>&#39;be_contents&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=n>be_contents</span>
+    <span class=n>o_article</span><span class=p>[</span><span class=s1>&#39;be_emoji&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=n>be_emoji</span>
+    <span class=k>return</span> <span class=n>o_article</span>
+
+
+<span class=k>def</span> <span class=nf>str_to_json_comments</span><span class=p>(</span><span class=n>comments_str</span><span class=p>):</span>
+    <span class=n>o_comment</span> <span class=o>=</span> <span class=n>json</span><span class=o>.</span><span class=n>loads</span><span class=p>(</span><span class=n>comments_str</span><span class=p>)</span>
+    <span class=n>comment</span> <span class=o>=</span> <span class=n>o_comment</span><span class=p>[</span><span class=s1>&#39;comment_text&#39;</span><span class=p>]</span>
+    <span class=n>comment_emoji</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>findall</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;alt=\[(.*?)\]&#39;</span><span class=p>,</span> <span class=n>comment</span><span class=p>)</span>
+    <span class=n>comment_text</span> <span class=o>=</span> <span class=n>re</span><span class=o>.</span><span class=n>findall</span><span class=p>(</span><span class=sa>r</span><span class=s1>&#39;[\u4e00-\u9fa5]+&#39;</span><span class=p>,</span> <span class=n>comment</span><span class=p>)</span>
+    <span class=n>o_comment</span><span class=p>[</span><span class=s1>&#39;comment_text&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=n>comment_text</span>
+    <span class=n>o_comment</span><span class=p>[</span><span class=s1>&#39;comment_emoji&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=n>comment_emoji</span>
+    <span class=k>return</span> <span class=n>o_comment</span>
+
+
+<span class=k>def</span> <span class=nf>obj_to_string</span><span class=p>(</span><span class=n>ots</span><span class=p>):</span>
+    <span class=n>r_o</span> <span class=o>=</span> <span class=p>{}</span>
+    <span class=k>for</span> <span class=n>key</span><span class=p>,</span> <span class=n>value</span> <span class=ow>in</span> <span class=n>ots</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
+        <span class=n>r_o</span><span class=p>[</span><span class=n>key</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;|&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>value</span><span class=p>)</span> <span class=k>if</span> <span class=nb>isinstance</span><span class=p>(</span><span class=n>value</span><span class=p>,</span> <span class=nb>list</span><span class=p>)</span> <span class=k>else</span> <span class=n>value</span>
+    <span class=c1># print(r_o)</span>
+    <span class=k>return</span> <span class=n>json</span><span class=o>.</span><span class=n>dumps</span><span class=p>(</span><span class=n>r_o</span><span class=p>)</span>
+
+
+<span class=n>pool</span> <span class=o>=</span> <span class=n>redis</span><span class=o>.</span><span class=n>ConnectionPool</span><span class=p>(</span><span class=n>host</span><span class=o>=</span><span class=s1>&#39;localhost&#39;</span><span class=p>,</span> <span class=n>port</span><span class=o>=</span><span class=mi>6379</span><span class=p>,</span> <span class=n>decode_responses</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+<span class=n>r</span> <span class=o>=</span> <span class=n>redis</span><span class=o>.</span><span class=n>Redis</span><span class=p>(</span><span class=n>host</span><span class=o>=</span><span class=s1>&#39;localhost&#39;</span><span class=p>,</span> <span class=n>port</span><span class=o>=</span><span class=mi>6379</span><span class=p>,</span> <span class=n>decode_responses</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+
+<span class=n>read_articles</span> <span class=o>=</span> <span class=s1>&#39;vb_article&#39;</span>
+<span class=n>read_comments</span> <span class=o>=</span> <span class=s1>&#39;comment_raw&#39;</span>
+<span class=n>write_comments</span> <span class=o>=</span> <span class=s1>&#39;comments_zh&#39;</span>
+
+<span class=n>t_hash</span> <span class=o>=</span> <span class=n>r</span><span class=o>.</span><span class=n>hgetall</span><span class=p>(</span><span class=n>read_comments</span><span class=p>)</span>
+<span class=n>articles</span> <span class=o>=</span> <span class=n>r</span><span class=o>.</span><span class=n>hgetall</span><span class=p>(</span><span class=n>read_articles</span><span class=p>)</span>
+<span class=k>for</span> <span class=n>key</span><span class=p>,</span> <span class=n>value</span> <span class=ow>in</span> <span class=n>t_hash</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
+    <span class=p>[</span><span class=n>user_id</span><span class=p>,</span> <span class=n>comment_id</span><span class=p>]</span> <span class=o>=</span> <span class=n>key</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s1>&#39;|&#39;</span><span class=p>)</span>
+    <span class=n>comment_obj</span> <span class=o>=</span> <span class=n>str_to_json_comments</span><span class=p>(</span><span class=n>value</span><span class=p>)</span>
+    <span class=n>url_id</span> <span class=o>=</span> <span class=n>comment_obj</span><span class=p>[</span><span class=s1>&#39;comment_obj_id&#39;</span><span class=p>]</span>
+    <span class=n>articles_str</span> <span class=o>=</span> <span class=n>articles</span><span class=p>[</span><span class=nb>str</span><span class=p>(</span><span class=n>url_id</span><span class=p>)]</span>
+    <span class=n>articles_obj</span> <span class=o>=</span> <span class=n>str_to_json_articles</span><span class=p>(</span><span class=n>articles_str</span><span class=p>)</span>
+    <span class=n>obj</span> <span class=o>=</span> <span class=p>{</span>
+        <span class=s2>&#34;comment_text&#34;</span><span class=p>:</span> <span class=n>comment_obj</span><span class=p>[</span><span class=s2>&#34;comment_text&#34;</span><span class=p>],</span>
+        <span class=s2>&#34;comment_emoji&#34;</span><span class=p>:</span> <span class=n>comment_obj</span><span class=p>[</span><span class=s2>&#34;comment_emoji&#34;</span><span class=p>],</span>
+        <span class=s2>&#34;nickname&#34;</span><span class=p>:</span> <span class=n>comment_obj</span><span class=p>[</span><span class=s2>&#34;nickname&#34;</span><span class=p>],</span>
+        <span class=s2>&#34;like_count&#34;</span><span class=p>:</span> <span class=n>comment_obj</span><span class=p>[</span><span class=s2>&#34;like_count&#34;</span><span class=p>],</span>
+        <span class=s2>&#34;reply_count&#34;</span><span class=p>:</span> <span class=n>comment_obj</span><span class=p>[</span><span class=s2>&#34;reply&#34;</span><span class=p>],</span>
+        <span class=s2>&#34;be_co_retweet&#34;</span><span class=p>:</span> <span class=n>articles_obj</span><span class=p>[</span><span class=s2>&#34;be_co_retweet&#34;</span><span class=p>],</span>
+        <span class=s2>&#34;be_co_comments&#34;</span><span class=p>:</span> <span class=n>articles_obj</span><span class=p>[</span><span class=s2>&#34;be_co_comments&#34;</span><span class=p>],</span>
+        <span class=s2>&#34;be_co_like&#34;</span><span class=p>:</span> <span class=n>articles_obj</span><span class=p>[</span><span class=s2>&#34;be_co_like&#34;</span><span class=p>],</span>
+        <span class=s2>&#34;author&#34;</span><span class=p>:</span> <span class=n>articles_obj</span><span class=p>[</span><span class=s2>&#34;author&#34;</span><span class=p>],</span>
+        <span class=s2>&#34;be_contents&#34;</span><span class=p>:</span> <span class=n>articles_obj</span><span class=p>[</span><span class=s2>&#34;be_contents&#34;</span><span class=p>],</span>
+        <span class=s2>&#34;be_emoji&#34;</span><span class=p>:</span> <span class=n>articles_obj</span><span class=p>[</span><span class=s2>&#34;be_emoji&#34;</span><span class=p>]</span>
+    <span class=p>}</span>
+    <span class=n>s_keys</span> <span class=o>=</span> <span class=s1>&#39;|&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>([</span><span class=n>comment_id</span><span class=p>,</span> <span class=n>user_id</span><span class=p>,</span> <span class=n>comment_obj</span><span class=p>[</span><span class=s2>&#34;comment_obj_id&#34;</span><span class=p>]])</span>
+    <span class=n>s_value</span> <span class=o>=</span> <span class=n>obj_to_string</span><span class=p>(</span><span class=n>obj</span><span class=p>)</span>
+    <span class=n>r</span><span class=o>.</span><span class=n>hset</span><span class=p>(</span><span class=n>write_comments</span><span class=p>,</span> <span class=n>s_keys</span><span class=p>,</span> <span class=n>s_value</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h1 id=异常检测算法第一层>异常检测算法第一层</h1>
+<h2 id=算法选择>算法选择</h2>
+<p>已复现网络与论文上的算法评测代码，了解无监督聚类异常检测算法的原理与发展情况，核心代码和实现可参考我的<a href=https://github.com/magictomagic/magictomagic.github.io/tree/master/files/diploma_notes>读书笔记</a>。</p>
+<h2 id=划分任务弃用>划分任务(弃用)</h2>
+<blockquote>
+<p>提需求，做自己的产品经理</p>
+</blockquote>
+<ul>
+<li><input checked disabled type=checkbox> 将 Redis 中所有文本分词后添加到语料库</li>
+<li><input checked disabled type=checkbox> 将 Redis 中文本分词，加载停用词表</li>
+<li><input checked disabled type=checkbox> 语料库向量化，if-idf 赋权</li>
+<li><input checked disabled type=checkbox> 配好环境(Docker 微服务架构)，在ubuntu上跑通前面所有的东西</li>
+<li><input disabled type=checkbox> PCA降维，dbscan 聚类(可拓展选择其它算法)</li>
+<li><input disabled type=checkbox> 输出(可能要修改前面的传参)</li>
+</ul>
+<h2 id=实现需求>实现需求</h2>
+<blockquote>
+<p>语料库要尽量包含所有的词</p>
+<p>先用小数据集模拟，避免大数据集运行时间过长</p>
+</blockquote>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>redis</span>
+<span class=kn>import</span> <span class=nn>json</span>
+<span class=kn>import</span> <span class=nn>jieba</span>
+<span class=kn>import</span> <span class=nn>jieba.analyse</span>
+<span class=kn>import</span> <span class=nn>time</span>
+<span class=kn>from</span> <span class=nn>sklearn.feature_extraction.text</span> <span class=kn>import</span> <span class=n>TfidfTransformer</span>
+<span class=kn>from</span> <span class=nn>sklearn.feature_extraction.text</span> <span class=kn>import</span> <span class=n>CountVectorizer</span>
+<span class=kn>from</span> <span class=nn>sklearn.decomposition</span> <span class=kn>import</span> <span class=n>PCA</span>
+
+
+<span class=n>corpus_file</span> <span class=o>=</span> <span class=s2>&#34;idf.txt.big&#34;</span>  <span class=c1># &#34;idf.txt.big&#34;</span>
+<span class=n>stop_words</span> <span class=o>=</span> <span class=nb>open</span><span class=p>(</span><span class=s2>&#34;stopWords.txt&#34;</span><span class=p>,</span> <span class=n>encoding</span><span class=o>=</span><span class=s1>&#39;utf-8&#39;</span><span class=p>)</span><span class=o>.</span><span class=n>read</span><span class=p>()</span>
+<span class=n>corpus_fp</span> <span class=o>=</span> <span class=nb>open</span><span class=p>(</span><span class=n>corpus_file</span><span class=p>,</span> <span class=s1>&#39;a+&#39;</span><span class=p>,</span> <span class=n>encoding</span><span class=o>=</span><span class=s1>&#39;utf-8&#39;</span><span class=p>)</span>
+<span class=n>raw_corpus</span> <span class=o>=</span> <span class=nb>open</span><span class=p>(</span><span class=n>corpus_file</span><span class=p>,</span> <span class=n>encoding</span><span class=o>=</span><span class=s1>&#39;utf-8&#39;</span><span class=p>)</span><span class=o>.</span><span class=n>readlines</span><span class=p>()</span>
+<span class=n>topK</span> <span class=o>=</span> <span class=mi>10</span>
+
+
+<span class=k>def</span> <span class=nf>remove_stop_words</span><span class=p>(</span><span class=n>data_list</span><span class=p>):</span>
+    <span class=n>word_list</span> <span class=o>=</span> <span class=p>[]</span>
+    <span class=k>for</span> <span class=n>data</span> <span class=ow>in</span> <span class=n>data_list</span><span class=p>:</span>
+        <span class=k>if</span> <span class=n>data</span> <span class=ow>not</span> <span class=ow>in</span> <span class=n>stop_words</span><span class=p>:</span>
+            <span class=n>word_list</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>data</span><span class=p>)</span>
+    <span class=k>return</span> <span class=n>word_list</span>
+
+
+<span class=k>def</span> <span class=nf>preheat_cache</span><span class=p>(</span><span class=n>db</span><span class=p>,</span> <span class=n>sensitivity</span><span class=o>=</span><span class=mi>4</span><span class=p>):</span>
+    <span class=s2>&#34;&#34;&#34;
+</span><span class=s2>    preheat 分词引擎
+</span><span class=s2>    add new words if discovered from comments,
+</span><span class=s2>    everytime service started, traversal the database, add new words to cache
+</span><span class=s2>    takes long time...
+</span><span class=s2>    wish astringency
+</span><span class=s2>    &#34;&#34;&#34;</span>
+    <span class=n>pool</span> <span class=o>=</span> <span class=n>redis</span><span class=o>.</span><span class=n>ConnectionPool</span><span class=p>(</span><span class=n>host</span><span class=o>=</span><span class=s1>&#39;localhost&#39;</span><span class=p>,</span> <span class=n>port</span><span class=o>=</span><span class=mi>6379</span><span class=p>,</span> <span class=n>decode_responses</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+    <span class=n>r</span> <span class=o>=</span> <span class=n>redis</span><span class=o>.</span><span class=n>Redis</span><span class=p>(</span><span class=n>host</span><span class=o>=</span><span class=s1>&#39;localhost&#39;</span><span class=p>,</span> <span class=n>port</span><span class=o>=</span><span class=mi>6379</span><span class=p>,</span> <span class=n>decode_responses</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+    <span class=n>jieba</span><span class=o>.</span><span class=n>analyse</span><span class=o>.</span><span class=n>set_idf_path</span><span class=p>(</span><span class=n>corpus_file</span><span class=p>)</span>
+    <span class=n>raw_comment</span> <span class=o>=</span> <span class=n>r</span><span class=o>.</span><span class=n>hgetall</span><span class=p>(</span><span class=n>db</span><span class=p>)</span>
+    <span class=n>raw_new_words_hash_map</span> <span class=o>=</span> <span class=p>{}</span>
+    <span class=n>start_time1</span> <span class=o>=</span> <span class=n>time</span><span class=o>.</span><span class=n>time</span><span class=p>()</span>
+    <span class=k>for</span> <span class=n>key</span><span class=p>,</span> <span class=n>raw_value</span> <span class=ow>in</span> <span class=n>raw_comment</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
+        <span class=n>value</span> <span class=o>=</span> <span class=n>json</span><span class=o>.</span><span class=n>loads</span><span class=p>(</span><span class=n>raw_value</span><span class=p>)</span>
+        <span class=n>comment_text</span> <span class=o>=</span> <span class=n>value</span><span class=p>[</span><span class=s1>&#39;comment_text&#39;</span><span class=p>]</span>
+        <span class=n>comment_array</span> <span class=o>=</span> <span class=n>comment_text</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s1>&#39;|&#39;</span><span class=p>)</span>
+        <span class=n>comment</span> <span class=o>=</span> <span class=p>[]</span>
+        <span class=k>for</span> <span class=n>text</span> <span class=ow>in</span> <span class=n>comment_array</span><span class=p>:</span>
+            <span class=c1># comment.append(&#39;/&#39;.join(jieba.cut(text)))</span>
+            <span class=n>comment</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=s1>&#39;/&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>jieba</span><span class=o>.</span><span class=n>analyse</span><span class=o>.</span><span class=n>extract_tags</span><span class=p>(</span><span class=n>text</span><span class=p>,</span> <span class=n>topK</span><span class=o>=</span><span class=n>topK</span><span class=p>)))</span>
+        <span class=n>comment_row</span> <span class=o>=</span> <span class=s1>&#39;/&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>comment</span><span class=p>)</span>
+        <span class=n>no_stop_words</span> <span class=o>=</span> <span class=n>remove_stop_words</span><span class=p>(</span><span class=n>comment_row</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s1>&#39;/&#39;</span><span class=p>))</span>
+        <span class=k>for</span> <span class=n>word</span> <span class=ow>in</span> <span class=n>no_stop_words</span><span class=p>:</span>
+            <span class=k>if</span> <span class=n>word</span> <span class=ow>in</span> <span class=n>raw_new_words_hash_map</span><span class=p>:</span>
+                <span class=n>raw_new_words_hash_map</span><span class=p>[</span><span class=n>word</span><span class=p>]</span> <span class=o>=</span> <span class=n>raw_new_words_hash_map</span><span class=p>[</span><span class=n>word</span><span class=p>]</span> <span class=o>+</span> <span class=mi>1</span>
+            <span class=k>else</span><span class=p>:</span>
+                <span class=n>raw_new_words_hash_map</span><span class=p>[</span><span class=n>word</span><span class=p>]</span> <span class=o>=</span> <span class=mi>0</span>
+            <span class=n>jieba</span><span class=o>.</span><span class=n>add_word</span><span class=p>(</span><span class=n>word</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;add new words finished&#39;</span><span class=p>)</span>
+    <span class=n>new_words_hash_map</span> <span class=o>=</span> <span class=p>{}</span>
+    <span class=k>for</span> <span class=n>key_word</span><span class=p>,</span> <span class=n>times</span> <span class=ow>in</span> <span class=n>raw_new_words_hash_map</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
+        <span class=k>if</span> <span class=n>times</span> <span class=o>&gt;=</span> <span class=n>sensitivity</span><span class=p>:</span>
+            <span class=n>new_words_hash_map</span><span class=p>[</span><span class=n>key_word</span><span class=p>]</span> <span class=o>=</span> <span class=n>times</span>
+    <span class=n>end_time1</span> <span class=o>=</span> <span class=n>time</span><span class=o>.</span><span class=n>time</span><span class=p>()</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;cost &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>end_time1</span> <span class=o>-</span> <span class=n>start_time1</span><span class=p>))</span>
+    <span class=n>append_corpus</span><span class=p>(</span><span class=n>new_words_hash_map</span><span class=p>)</span>
+
+
+<span class=k>def</span> <span class=nf>append_corpus</span><span class=p>(</span><span class=n>new_words</span><span class=p>):</span>
+    <span class=n>corpus</span> <span class=o>=</span> <span class=nb>set</span><span class=p>()</span>
+    <span class=n>size</span> <span class=o>=</span> <span class=nb>len</span><span class=p>(</span><span class=n>new_words</span><span class=p>)</span>
+    <span class=k>for</span> <span class=n>item</span> <span class=ow>in</span> <span class=n>raw_corpus</span><span class=p>:</span>
+        <span class=n>w</span> <span class=o>=</span> <span class=n>item</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s1>&#39; &#39;</span><span class=p>)[</span><span class=mi>0</span><span class=p>]</span>
+        <span class=n>corpus</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>w</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=n>corpus</span><span class=p>))</span>
+    <span class=k>for</span> <span class=n>key_word</span><span class=p>,</span> <span class=n>times</span> <span class=ow>in</span> <span class=n>new_words</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
+        <span class=k>if</span> <span class=n>key_word</span> <span class=ow>not</span> <span class=ow>in</span> <span class=n>corpus</span> <span class=ow>and</span> <span class=nb>len</span><span class=p>(</span><span class=n>key_word</span><span class=p>)</span> <span class=o>&gt;</span> <span class=mi>2</span><span class=p>:</span>
+            <span class=n>new_item</span> <span class=o>=</span> <span class=s1>&#39;</span><span class=se>\n</span><span class=s1>&#39;</span> <span class=o>+</span> <span class=n>key_word</span> <span class=o>+</span> <span class=s2>&#34; &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>topK</span><span class=p>)</span>  <span class=c1># str(times/size)</span>
+            <span class=nb>print</span><span class=p>(</span><span class=n>new_item</span><span class=p>)</span>
+            <span class=n>corpus_fp</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=n>new_item</span><span class=p>)</span>
+
+
+<span class=k>def</span> <span class=nf>text_to_matrix</span><span class=p>():</span>
+    <span class=s2>&#34;&#34;&#34;
+</span><span class=s2>    according to
+</span><span class=s2>        https://stackoverflow.com/questions/57507832/unable-to-allocate-array-with-shape-and-data-type
+</span><span class=s2>
+</span><span class=s2>    run:
+</span><span class=s2>        echo 1 &gt; /proc/sys/vm/overcommit_memory
+</span><span class=s2>    &#34;&#34;&#34;</span>
+    <span class=n>vectorizer</span> <span class=o>=</span> <span class=n>CountVectorizer</span><span class=p>()</span>
+    <span class=n>transformer</span> <span class=o>=</span> <span class=n>TfidfTransformer</span><span class=p>()</span>
+    <span class=n>tf_idf</span> <span class=o>=</span> <span class=n>transformer</span><span class=o>.</span><span class=n>fit_transform</span><span class=p>(</span><span class=n>vectorizer</span><span class=o>.</span><span class=n>fit_transform</span><span class=p>(</span><span class=n>raw_corpus</span><span class=p>))</span>
+
+    <span class=n>weight</span> <span class=o>=</span> <span class=n>tf_idf</span><span class=o>.</span><span class=n>toarray</span><span class=p>()</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>weight</span><span class=p>)</span>
+    <span class=k>return</span> <span class=n>weight</span>
+
+
+<span class=k>def</span> <span class=nf>dimension_PCA</span><span class=p>(</span><span class=n>weight</span><span class=p>,</span> <span class=n>dimension</span><span class=p>):</span>
+    <span class=n>pca</span> <span class=o>=</span> <span class=n>PCA</span><span class=p>(</span><span class=n>n_components</span><span class=o>=</span><span class=n>dimension</span><span class=p>)</span>
+    <span class=n>X</span> <span class=o>=</span> <span class=n>pca</span><span class=o>.</span><span class=n>fit_transform</span><span class=p>(</span><span class=n>weight</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>X</span><span class=p>)</span>
+    <span class=k>return</span> <span class=n>X</span>
+
+
+<span class=k>if</span> <span class=vm>__name__</span> <span class=o>==</span> <span class=s1>&#39;__main__&#39;</span><span class=p>:</span>
+    <span class=c1># print(remove_stop_words([&#39;首先&#39;, &#39;你好&#39;, &#39;难道说&#39;]))</span>
+    <span class=c1># preheat_cache(&#34;comments_zh&#34;)  # comments_zh</span>
+    <span class=n>weight</span> <span class=o>=</span> <span class=n>text_to_matrix</span><span class=p>()</span>
+    <span class=n>dimension_PCA</span><span class=p>(</span><span class=n>weight</span><span class=p>,</span> <span class=n>dimension</span><span class=o>=</span><span class=mi>800</span><span class=p>)</span>
+    <span class=c1># print(raw_corpus)</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=第一次运行结果>第一次运行结果</h4>
+<p><a href=./files/new_corpus3.pdf>点击下载</a></p>
+<h4 id=第二次运行结果>第二次运行结果</h4>
+<p><img src=../img/image-20210220132356116.png alt=image-20210220132356116></p>
+<h4 id=结果总结>结果总结</h4>
+<p>语料库会随着爬取评论的增多而扩大，且收敛效果好。可以自适应不断扩大的评论数量。缺点是不能增量式的扩大，每次需要遍历整个语料库，存在重复计算，在服务器架构不优化的情况下，每次服务启动时初始化（预热阶段）的速度会不断变慢，虽然之后的响应速度几乎不变。</p>
+<h2 id=继续实现需求>继续实现需求</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>redis</span>
+<span class=kn>import</span> <span class=nn>json</span>
+<span class=kn>import</span> <span class=nn>jieba</span>
+<span class=kn>import</span> <span class=nn>jieba.analyse</span>
+<span class=kn>import</span> <span class=nn>time</span>
+<span class=kn>import</span> <span class=nn>torch</span>
+<span class=kn>from</span> <span class=nn>sklearn.feature_extraction.text</span> <span class=kn>import</span> <span class=n>TfidfTransformer</span>
+<span class=kn>from</span> <span class=nn>sklearn.feature_extraction.text</span> <span class=kn>import</span> <span class=n>CountVectorizer</span>
+<span class=kn>from</span> <span class=nn>sklearn.decomposition</span> <span class=kn>import</span> <span class=n>PCA</span>
+<span class=kn>from</span> <span class=nn>sklearn.cluster</span> <span class=kn>import</span> <span class=n>Birch</span>
+
+
+<span class=n>corpus_file</span> <span class=o>=</span> <span class=s2>&#34;idf.txt.big&#34;</span>  <span class=c1># &#34;idf.txt.big&#34;</span>
+<span class=n>stop_words</span> <span class=o>=</span> <span class=nb>open</span><span class=p>(</span><span class=s2>&#34;stopWords.txt&#34;</span><span class=p>,</span> <span class=n>encoding</span><span class=o>=</span><span class=s1>&#39;utf-8&#39;</span><span class=p>)</span><span class=o>.</span><span class=n>read</span><span class=p>()</span>
+<span class=n>corpus_fp</span> <span class=o>=</span> <span class=nb>open</span><span class=p>(</span><span class=n>corpus_file</span><span class=p>,</span> <span class=s1>&#39;a+&#39;</span><span class=p>,</span> <span class=n>encoding</span><span class=o>=</span><span class=s1>&#39;utf-8&#39;</span><span class=p>)</span>
+<span class=n>raw_corpus</span> <span class=o>=</span> <span class=nb>open</span><span class=p>(</span><span class=n>corpus_file</span><span class=p>,</span> <span class=n>encoding</span><span class=o>=</span><span class=s1>&#39;utf-8&#39;</span><span class=p>)</span><span class=o>.</span><span class=n>readlines</span><span class=p>()</span>
+<span class=n>topK</span> <span class=o>=</span> <span class=mi>10</span>
+
+
+<span class=k>def</span> <span class=nf>remove_stop_words</span><span class=p>(</span><span class=n>data_list</span><span class=p>):</span>
+    <span class=n>word_list</span> <span class=o>=</span> <span class=p>[]</span>
+    <span class=k>for</span> <span class=n>data</span> <span class=ow>in</span> <span class=n>data_list</span><span class=p>:</span>
+        <span class=k>if</span> <span class=n>data</span> <span class=ow>not</span> <span class=ow>in</span> <span class=n>stop_words</span><span class=p>:</span>
+            <span class=n>word_list</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>data</span><span class=p>)</span>
+    <span class=k>return</span> <span class=n>word_list</span>
+
+
+<span class=k>def</span> <span class=nf>preheat_cache</span><span class=p>(</span><span class=n>db</span><span class=p>,</span> <span class=n>sensitivity</span><span class=o>=</span><span class=mi>4</span><span class=p>):</span>
+    <span class=s2>&#34;&#34;&#34;
+</span><span class=s2>    preheat 分词引擎
+</span><span class=s2>    add new words if discovered from comments,
+</span><span class=s2>    everytime service started, traversal the database, add new words to cache
+</span><span class=s2>    takes long time...
+</span><span class=s2>    wish astringency
+</span><span class=s2>    &#34;&#34;&#34;</span>
+    <span class=n>pool</span> <span class=o>=</span> <span class=n>redis</span><span class=o>.</span><span class=n>ConnectionPool</span><span class=p>(</span><span class=n>host</span><span class=o>=</span><span class=s1>&#39;localhost&#39;</span><span class=p>,</span> <span class=n>port</span><span class=o>=</span><span class=mi>6379</span><span class=p>,</span> <span class=n>decode_responses</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+    <span class=n>r</span> <span class=o>=</span> <span class=n>redis</span><span class=o>.</span><span class=n>Redis</span><span class=p>(</span><span class=n>host</span><span class=o>=</span><span class=s1>&#39;localhost&#39;</span><span class=p>,</span> <span class=n>port</span><span class=o>=</span><span class=mi>6379</span><span class=p>,</span> <span class=n>decode_responses</span><span class=o>=</span><span class=kc>True</span><span class=p>)</span>
+    <span class=n>jieba</span><span class=o>.</span><span class=n>analyse</span><span class=o>.</span><span class=n>set_idf_path</span><span class=p>(</span><span class=n>corpus_file</span><span class=p>)</span>
+    <span class=n>raw_comment</span> <span class=o>=</span> <span class=n>r</span><span class=o>.</span><span class=n>hgetall</span><span class=p>(</span><span class=n>db</span><span class=p>)</span>
+    <span class=n>raw_new_words_hash_map</span> <span class=o>=</span> <span class=p>{}</span>
+    <span class=n>start_time1</span> <span class=o>=</span> <span class=n>time</span><span class=o>.</span><span class=n>time</span><span class=p>()</span>
+    <span class=k>for</span> <span class=n>key</span><span class=p>,</span> <span class=n>raw_value</span> <span class=ow>in</span> <span class=n>raw_comment</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
+        <span class=n>value</span> <span class=o>=</span> <span class=n>json</span><span class=o>.</span><span class=n>loads</span><span class=p>(</span><span class=n>raw_value</span><span class=p>)</span>
+        <span class=n>comment_text</span> <span class=o>=</span> <span class=n>value</span><span class=p>[</span><span class=s1>&#39;comment_text&#39;</span><span class=p>]</span>
+        <span class=n>comment_array</span> <span class=o>=</span> <span class=n>comment_text</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s1>&#39;|&#39;</span><span class=p>)</span>
+        <span class=n>comment</span> <span class=o>=</span> <span class=p>[]</span>
+        <span class=k>for</span> <span class=n>text</span> <span class=ow>in</span> <span class=n>comment_array</span><span class=p>:</span>
+            <span class=c1># comment.append(&#39;/&#39;.join(jieba.cut(text)))</span>
+            <span class=n>comment</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=s1>&#39;/&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>jieba</span><span class=o>.</span><span class=n>analyse</span><span class=o>.</span><span class=n>extract_tags</span><span class=p>(</span><span class=n>text</span><span class=p>,</span> <span class=n>topK</span><span class=o>=</span><span class=n>topK</span><span class=p>)))</span>
+        <span class=n>comment_row</span> <span class=o>=</span> <span class=s1>&#39;/&#39;</span><span class=o>.</span><span class=n>join</span><span class=p>(</span><span class=n>comment</span><span class=p>)</span>
+        <span class=n>no_stop_words</span> <span class=o>=</span> <span class=n>remove_stop_words</span><span class=p>(</span><span class=n>comment_row</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s1>&#39;/&#39;</span><span class=p>))</span>
+        <span class=k>for</span> <span class=n>word</span> <span class=ow>in</span> <span class=n>no_stop_words</span><span class=p>:</span>
+            <span class=k>if</span> <span class=n>word</span> <span class=ow>in</span> <span class=n>raw_new_words_hash_map</span><span class=p>:</span>
+                <span class=n>raw_new_words_hash_map</span><span class=p>[</span><span class=n>word</span><span class=p>]</span> <span class=o>=</span> <span class=n>raw_new_words_hash_map</span><span class=p>[</span><span class=n>word</span><span class=p>]</span> <span class=o>+</span> <span class=mi>1</span>
+            <span class=k>else</span><span class=p>:</span>
+                <span class=n>raw_new_words_hash_map</span><span class=p>[</span><span class=n>word</span><span class=p>]</span> <span class=o>=</span> <span class=mi>0</span>
+            <span class=n>jieba</span><span class=o>.</span><span class=n>add_word</span><span class=p>(</span><span class=n>word</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s1>&#39;add new words finished&#39;</span><span class=p>)</span>
+    <span class=n>new_words_hash_map</span> <span class=o>=</span> <span class=p>{}</span>
+    <span class=k>for</span> <span class=n>key_word</span><span class=p>,</span> <span class=n>times</span> <span class=ow>in</span> <span class=n>raw_new_words_hash_map</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
+        <span class=k>if</span> <span class=n>times</span> <span class=o>&gt;=</span> <span class=n>sensitivity</span><span class=p>:</span>
+            <span class=n>new_words_hash_map</span><span class=p>[</span><span class=n>key_word</span><span class=p>]</span> <span class=o>=</span> <span class=n>times</span>
+    <span class=n>end_time1</span> <span class=o>=</span> <span class=n>time</span><span class=o>.</span><span class=n>time</span><span class=p>()</span>
+    <span class=nb>print</span><span class=p>(</span><span class=s2>&#34;cost &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>end_time1</span> <span class=o>-</span> <span class=n>start_time1</span><span class=p>))</span>
+    <span class=n>append_corpus</span><span class=p>(</span><span class=n>new_words_hash_map</span><span class=p>)</span>
+
+
+<span class=k>def</span> <span class=nf>append_corpus</span><span class=p>(</span><span class=n>new_words</span><span class=p>):</span>
+    <span class=n>corpus</span> <span class=o>=</span> <span class=nb>set</span><span class=p>()</span>
+    <span class=n>size</span> <span class=o>=</span> <span class=nb>len</span><span class=p>(</span><span class=n>new_words</span><span class=p>)</span>
+    <span class=k>for</span> <span class=n>item</span> <span class=ow>in</span> <span class=n>raw_corpus</span><span class=p>:</span>
+        <span class=n>w</span> <span class=o>=</span> <span class=n>item</span><span class=o>.</span><span class=n>split</span><span class=p>(</span><span class=s1>&#39; &#39;</span><span class=p>)[</span><span class=mi>0</span><span class=p>]</span>
+        <span class=n>corpus</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>w</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=n>corpus</span><span class=p>))</span>
+    <span class=k>for</span> <span class=n>key_word</span><span class=p>,</span> <span class=n>times</span> <span class=ow>in</span> <span class=n>new_words</span><span class=o>.</span><span class=n>items</span><span class=p>():</span>
+        <span class=k>if</span> <span class=n>key_word</span> <span class=ow>not</span> <span class=ow>in</span> <span class=n>corpus</span> <span class=ow>and</span> <span class=nb>len</span><span class=p>(</span><span class=n>key_word</span><span class=p>)</span> <span class=o>&gt;</span> <span class=mi>2</span><span class=p>:</span>
+            <span class=n>new_item</span> <span class=o>=</span> <span class=s1>&#39;</span><span class=se>\n</span><span class=s1>&#39;</span> <span class=o>+</span> <span class=n>key_word</span> <span class=o>+</span> <span class=s2>&#34; &#34;</span> <span class=o>+</span> <span class=nb>str</span><span class=p>(</span><span class=n>topK</span><span class=p>)</span>  <span class=c1># str(times/size)</span>
+            <span class=nb>print</span><span class=p>(</span><span class=n>new_item</span><span class=p>)</span>
+            <span class=n>corpus_fp</span><span class=o>.</span><span class=n>write</span><span class=p>(</span><span class=n>new_item</span><span class=p>)</span>
+
+
+<span class=k>def</span> <span class=nf>text_to_matrix</span><span class=p>():</span>
+    <span class=n>vectorizer</span> <span class=o>=</span> <span class=n>CountVectorizer</span><span class=p>()</span>
+    <span class=n>transformer</span> <span class=o>=</span> <span class=n>TfidfTransformer</span><span class=p>()</span>
+    <span class=n>tf_idf</span> <span class=o>=</span> <span class=n>transformer</span><span class=o>.</span><span class=n>fit_transform</span><span class=p>(</span><span class=n>vectorizer</span><span class=o>.</span><span class=n>fit_transform</span><span class=p>(</span><span class=n>raw_corpus</span><span class=p>))</span>
+
+    <span class=n>weight</span> <span class=o>=</span> <span class=n>tf_idf</span><span class=o>.</span><span class=n>toarray</span><span class=p>()</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>weight</span><span class=p>)</span>
+    <span class=k>return</span> <span class=n>weight</span>
+
+
+<span class=k>def</span> <span class=nf>dimension_PCA</span><span class=p>(</span><span class=n>weight</span><span class=p>,</span> <span class=n>dimension</span><span class=p>):</span>
+    <span class=n>pca</span> <span class=o>=</span> <span class=n>PCA</span><span class=p>(</span><span class=n>n_components</span><span class=o>=</span><span class=n>dimension</span><span class=p>)</span>
+    <span class=n>X</span> <span class=o>=</span> <span class=n>pca</span><span class=o>.</span><span class=n>fit_transform</span><span class=p>(</span><span class=n>weight</span><span class=p>)</span>
+    <span class=k>return</span> <span class=n>X</span>
+
+
+<span class=k>def</span> <span class=nf>cluster_birch</span><span class=p>(</span><span class=n>X</span><span class=p>):</span>
+    <span class=n>brc</span> <span class=o>=</span> <span class=n>Birch</span><span class=p>(</span><span class=n>n_clusters</span><span class=o>=</span><span class=kc>None</span><span class=p>)</span>
+    <span class=n>brc</span><span class=o>.</span><span class=n>fit</span><span class=p>(</span><span class=n>X</span><span class=p>)</span>
+    <span class=k>return</span> <span class=n>brc</span><span class=o>.</span><span class=n>predict</span><span class=p>(</span><span class=n>X</span><span class=p>)</span>
+
+
+<span class=k>if</span> <span class=vm>__name__</span> <span class=o>==</span> <span class=s1>&#39;__main__&#39;</span><span class=p>:</span>
+    <span class=c1># weight = text_to_matrix()</span>
+    <span class=c1># print(len(weight))</span>
+    <span class=c1># print(len(weight[0]))</span>
+    <span class=c1># fwt = torch.tensor(weight)</span>
+    <span class=n>fwt</span> <span class=o>=</span> <span class=n>torch</span><span class=o>.</span><span class=n>rand</span><span class=p>(</span><span class=mi>1186667</span><span class=p>,</span> <span class=mi>30</span><span class=p>)</span>
+    <span class=n>U</span><span class=p>,</span> <span class=n>S</span><span class=p>,</span> <span class=n>V</span> <span class=o>=</span> <span class=n>torch</span><span class=o>.</span><span class=n>pca_lowrank</span><span class=p>(</span><span class=n>fwt</span><span class=p>,</span> <span class=n>q</span><span class=o>=</span><span class=mi>30</span><span class=p>,</span> <span class=n>center</span><span class=o>=</span><span class=kc>True</span><span class=p>,</span> <span class=n>niter</span><span class=o>=</span><span class=mi>2</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>U</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>S</span><span class=p>)</span>
+    <span class=nb>print</span><span class=p>(</span><span class=n>V</span><span class=p>)</span>
+    <span class=c1># with open(&#34;U.txt&#34;, &#39;w+&#39;) as f:</span>
+    <span class=c1>#     f.write(str(U))</span>
+    <span class=c1># with open(&#34;S.txt&#34;, &#39;w+&#39;) as f:</span>
+    <span class=c1>#     f.write(str(S))</span>
+    <span class=c1># with open(&#34;V.txt&#34;, &#39;w+&#39;) as f:</span>
+    <span class=c1>#     f.write(str(V))</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>数据模型过大，ubuntu 虚拟机基本上一跑就卡死，把真机上的内存杀手 chrome 也挤得够呛。VScode运行无响应，还是用命令行运行保险。</p>
+<p><img src=../img/image-20210223000621696.png alt=image-20210223000621696><img src=../img/image-20210223000654155.png alt=image-20210223000654155></p>
+<h2 id=坑>坑</h2>
+<blockquote>
+<p>我再也不用 Manjaro 了</p>
+</blockquote>
+<h3 id=redis-迁移>Redis 迁移</h3>
+<ol>
+<li><code>127.0.0.1>save</code> 后去对应目录下复制<code>dump.rdb</code></li>
+<li>若不知道要复制 到|从 哪个目录，可用<code>127.0.0.1>config get dir</code>获取</li>
+<li>覆盖|粘贴 <code>dump.rdb</code>前一定要<code>systemctl stop redis</code>后<code>ps -ef | grep redis</code>看一下进程在不在，网上哪些用<code>kill -9</code>的杀死劲，不管用，杀了以后它换个 pid id 继续皮干。</li>
+<li><code>sudo cp</code> 一下，启动 redis，理应成功。</li>
+</ol>
+<h3 id=内存不够>内存不够</h3>
+<h4 id=unable-to-allocate-gib-for-an-array-with-shape>unable to allocate gib for an array with shape</h4>
+<blockquote>
+<p>待了解原理？？？</p>
+</blockquote>
+<blockquote>
+<p><code>numpy.core._exceptions.MemoryError: Unable to allocate array with shape</code> 这个报错windows下改了虚拟内存，pycharm下相应的设置也改了，都没用。所以只能去linux上重新开始项目了。<code>sudo -i</code> 切换 <code>root#</code> 执行<code>echo 1 > /proc/sys/vm/overcommit_memory</code>即可。</p>
+</blockquote>
+<p>换成 linux 环境后执行上述命令</p>
+<h4 id=process-finished-with-exit-code-137-interrupted-by-signal-9-sigkill>Process finished with exit code 137 (interrupted by signal 9: SIGKILL</h4>
+<h5 id=用-pytorch-分批训练>用 pytorch 分批训练</h5>
+<p>用 chunk 切分数据仍然不行。。。</p>
+<p>估摸着是读矩阵一次性读到内存中后继续在内存中操作会使内存占用变大然后超过门限，<code>torch.utils.data</code> 虽然可以分批加载数据，但是从硬盘中读。</p>
+<h5 id=存到硬盘中一端端读>存到硬盘中一端端读</h5>
+<p>将数据以不同的方式取部分，最后形成多个模型。可以以人工根据这些模型的好坏评个分，然后以分数为权重进行决策。或之间都赋一个分。</p>
+<h5 id=linux-扩容内存虚存>linux 扩容内存，虚存</h5>
+<blockquote>
+<p><code>free -m</code> 发现虚存不断扩大直到门限然后 killed 或 出现类似 <code>RuntimeError: [enforce fail at CPUAllocator.cpp:65] . DefaultCPUAllocator: can't allocate memory: you tried to allocate 127392453696 bytes. Error code 12 (Cannot allocate memory)</code> 的错误, 说明 内存虚存 分配的不够多</p>
+</blockquote>
+<p>参考<a href=https://askubuntu.com/questions/920595/fallocate-fallocate-failed-text-file-busy-in-ubuntu-17-04>1</a>，<a href=https://www.cnblogs.com/exciting/p/13668841.html>2</a>, 在<a href=https://stackoverflow.com/questions/43268156/process-finished-with-exit-code-137-in-pycharm/66313325#66313325>这里</a>回答了</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=c1># disable the use of swap</span>
+sudo swapoff -a
+
+<span class=c1># create the SWAP file. Make sure you have enough space on the hard disk.</span>
+sudo dd <span class=k>if</span><span class=o>=</span>/dev/zero <span class=nv>of</span><span class=o>=</span>/swapfile <span class=nv>bs</span><span class=o>=</span><span class=m>1024</span> <span class=nv>count</span><span class=o>=</span><span class=m>136314880</span> <span class=nv>status</span><span class=o>=</span>progress
+<span class=c1># 输出:</span>
+<span class=c1># 139458259968 bytes (139 GB, 130 GiB) copied, 472 s, 295 MB/s</span>
+<span class=c1># 136314880+0 records in</span>
+<span class=c1># 136314880+0 records out</span>
+<span class=c1># 139586437120 bytes (140 GB, 130 GiB) copied, 472.372 s, 296 MB/s</span>
+
+<span class=c1># Mark the file as SWAP space:</span>
+sudo mkswap /swapfile
+<span class=c1># 输出:</span>
+<span class=c1># Setting up swapspace version 1, size = 130 GiB (139586433024 bytes)</span>
+<span class=c1># no label, UUID=25a565d9-d19c-4913-87a5-f02750ab625d</span>
+
+<span class=c1># enable the SWAP.</span>
+sudo swapon /swapfile
+
+<span class=c1># check if SWAP is created</span>
+sudo swapon --show
+<span class=c1># 输出:</span>
+<span class=c1># NAME      TYPE SIZE USED PRIO</span>
+<span class=c1># /swapfile file 130G   0B   -2</span>
+
+<span class=c1># Once everything is set, you must set the SWAP file as permanent, else you will lose the SWAP after reboot. Run this command:</span>
+<span class=nb>echo</span> <span class=s1>&#39;/swapfile none swap sw 0 0&#39;</span> <span class=p>|</span> sudo tee -a /etc/fstab
+</code></pre></td></tr></table>
+</div>
+</div><p>之后看虚存有没有吃上,有没有用完</p>
+<p><img src=../img/image-20210222134945048.png alt=image-20210222134945048></p>
+<h5 id=内存与cpu都成为速度瓶颈>内存与CPU都成为速度瓶颈</h5>
+<p>前面的方法我都试过了，无奈数据集太大，就到了这里。</p>
+<p>将原本几十万条数据取出1000条进行训练，还是到了这一步，也就是如果将数据分批计算的化到毕业我的毕设是做不完的。</p>
+<p>如果租厉害的服务器又要花很多钱，又没得报销，坚决不干。</p>
+<h6 id=解决方案初步构想>解决方案初步构想：</h6>
+<blockquote>
+<p>资源不够，算法来凑</p>
+</blockquote>
+<p>那几十万维向量对应的词先自己分成<code>n</code>类，将维度降至<code>n</code>维，再对那<code>n</code>维进行PCA降维到<code>m</code>维(m &lt;= n)，得到<code>几十万行(可不断增加，根据资源自适应) * m</code>的矩阵，再进行聚类。</p>
+<p><strong>参数说明</strong>
+bs= sets the blocksize, for example bs=1M would be 1MiB blocksize.</p>
+<p>count= copies only this number of blocks (the default is for dd to keep going forever or until the input runs out). Ideally blocks are of bs= size but there may be incomplete reads, so if you use count= in order to copy a specific amount of data (count*bs), you should also supply iflag=fullblock.</p>
+<p>seek= seeks this number of blocks in the output, instead of writing to the very beginning of the output device.</p>
+<h4 id=最终解决方案>最终解决方案</h4>
+<blockquote>
+<p>遇到的问题是：以具体的词语构成向量的维度形成的稀疏矩阵数据规模超过了我的硬件和时间承受能力。</p>
+</blockquote>
+<p>使用 <a href=https://ltp.readthedocs.io/zh_CN/latest/>LTP4 </a> 进行对自然语言的词性划分，将原本几十万维的具体的词语构成向量转变成以词性构成的低维向量，虽然降低了训练的精度，但是硬件可以承受。</p>
+<h3 id=linux-空间用完不要关机保存之前写的代码再继续操作>Linux 空间用完不要关机，保存之前写的代码，再继续操作</h3>
+<blockquote>
+<p>快照不频繁，一夜回到解放前</p>
+</blockquote>
+<h2 id=再次划分任务正在进行的工作之后要做的实现的需求>再次划分任务(正在进行的工作，之后要做的实现的需求)</h2>
+<ul>
+<li><input disabled type=checkbox> 使用 LTP 将 redis 中的评论逐条词性分词与词性标注，存于新建立的数据库。保证之后可以根据向量找到对应的评论</li>
+<li><input disabled type=checkbox> 将新生成的向量拿 dbscan 聚类，若速度太慢则先用 PCA 降维，将输出的分类与对应的评论文本对应，用 真正的人工智能 判断分类的好坏。</li>
+<li><input disabled type=checkbox> 调参，优化算法</li>
+<li><input disabled type=checkbox> 将油猴端获取的评论用训练好的模型分类(将新增的评论加入聚类模型，后台定期优化模型)</li>
+<li><input disabled type=checkbox> 将分类的结果传回油猴端对评论区进行删改</li>
+</ul>
+<h2 id=实现坑后需求>实现坑后需求</h2>
+<p>代码略，已开源致<code>github</code></p>
+<h1 id=异常检测算法第二层>异常检测算法第二层</h1>
+<h2 id=聚类>聚类</h2>
+<p>代码略，已开源致<code>github</code></p>
+<h2 id=调参>调参</h2>
+<p>自创<code>感觉算法</code>，区别于科学教徒的<code>书本算法</code>。举例：</p>
+<p>下面这些评论，小爷我<code>感觉</code>它们有点傻逼，所以设置过滤值为<code>5</code></p>
+<p><img src=../img/image-20210401120838651.png alt=image-20210401120838651></p>
+<p>下面这些评论，老子认为它们非常傻逼，所以设置过滤值为<code>6</code></p>
+<p><img src=../img/image-20210401121020915.png alt=image-20210401121020915></p>
+<p>下面的评论我认为不怎么傻逼，所以设置过滤值为<code>2</code></p>
+<p><img src=../img/image-20210401121318822.png alt=image-20210401121318822></p>
+<p>第二层过滤，是从另一个层面去搞的，粒度更细</p>
+<p>比如过滤下面这种，毫无营养价值的评论（虽然看微博本身就没什么营养）</p>
+<p><img src=../img/image-20210401125813221.png alt=image-20210401125813221></p>
+<h1 id=将网页评论传到后端>将网页评论传到后端</h1>
+<h2 id=划分任务>划分任务</h2>
+<h2 id=js脚本抓取评论>js脚本抓取评论</h2>
+<h3 id=选一个业务场景>选一个业务场景</h3>
+<p>选一个含微博评论的页面 <a href="https://weibo.com/5639089198/JE5k6rgXV?type=comment">https://weibo.com/5639089198/JE5k6rgXV?type=comment</a></p>
+<h3 id=分析源码>分析源码</h3>
+<p><img src=../img/diploma/weiboWeb.png alt></p>
+<h3 id=编写脚本>编写脚本</h3>
+<h3 id=效果>效果</h3>
+<p><img src=../img/diploma/result1.png alt></p>
+<h2 id=前后端通信>前后端通信</h2>
+<h3 id=前端送数据到后端>前端送数据到后端</h3>
+<p>分为 服务端、油猴端，已开源</p>
+<h1 id=前后端交互>前后端交互</h1>
+<h2 id=设计思路>设计思路</h2>
+<p>原从手机端爬的<code>评论数据</code>由键值组成，键由<code>comment_id</code>, <code>user_id</code>, <code>url_id</code>组成。而网页端的微博，which爬它的难度最高，评论的id若要找到<code>user_id</code>或<code>url_id</code>太繁琐，需要解析这种<code>https://weibo.com/aj/v6/comment/big?ajwvr=6&id=4621646001078652&from=singleWeiBo&__rnd=1617403583282</code></p>
+<p><img src=../img/image-20210403075722106.png alt=image-20210403075722106></p>
+<p>这种ajax请求的模式每隔一段时间会变一次，19年的和21年的就不一样。他们是有拿工资的员工不断更新这种请求模式的，防止别人一直爬它，我是一次性的，把它当作炫技的毕设交了，之后不去管它了。我又不看微博，而且还淡推了，现在连RSS都只是偶尔瞄一眼了。</p>
+<p>所以现在把hash映射的模式改为：键是comment_id，值是评论的文本，其它字段用默认值填充。</p>
+<h2 id=打通-nodejs-和-python-的任督二脉>打通 Node.js 和 Python 的任督二脉</h2>
+<h3 id=练习>练习</h3>
+<p>新开一个测试仓库，专门用作将所学的理论实践一下，见</p>
+<p><a href=https://github.com/magictomagic/learn/tree/main/src/node_python>https://github.com/magictomagic/learn/tree/main/src/node_python</a></p>
+<h3 id=博客>博客</h3>
+<p>正在打算用<code>ghost</code>或加上<code>React</code>建一个迁移比较快的博客. 现在这里挖个坑.</p>
+<h2 id=效果-1>效果</h2>
+<p><img src=../img/image-20210404150647203.png alt=image-20210404150647203></p>
+<p>要删除的评论根据<code>id</code>以<code>set</code>返回</p>
+<h2 id=打通-nodejs-和前端的任督二脉>打通 Node.js 和前端的任督二脉</h2>
+<ul>
+<li>
+<p><input checked disabled type=checkbox> 根据<code>set</code>删除对应的评论</p>
+</li>
+<li>
+<p><input checked disabled type=checkbox> <code>redis</code>缓存</p>
+</li>
+</ul>
+<h1 id=cicd-持续集成>CI/CD 持续集成</h1>
+<h2 id=git-action>Git Action</h2>
+<h1 id=经验>经验</h1>
+<ul>
+<li>将数据从网页上爬下来不要过分清洗，从而破坏原来的结构，要记录爬取每条数据时的时间。要在尽可能小的占用存储空间的基础上尽可能多的保存数据之间的关系。</li>
+<li>能利用的资源（账号，IP，服务器~~，其实就是钱~~）越多，个人的潜力与才能才会得到更大发展。真的是马太效应啊！</li>
+<li>框架或现有的设计模式 既是模板，也是束缚，束缚对应已经限定死的场景，稍微活一点的场景就要用本真屎山了。</li>
+<li>本人日相属马，在未修相之前，与时相相害，与月相相冲，与年相相和。所以要谨慎得使用马属相。要善于将想法、思路，表达出来，切忌完美主义，被迷了路。每次先想到一个比较完美的解决方案后，想一想，做这件事的目的是什么，效果要怎样，如果砍掉其中某个花里胡哨的东西，用另外的简洁有缺陷的方案代替，大大缩短人月，效果也不差，是否更好。脑海中一定要有<code>目的</code>, <code>能用就行</code>两个声音。</li>
+<li>Pycharm 点击运行后自动加入当前工作目录路径于环境变量和当前文件路径。以cli运行python文件时不要用<code>os.getcwd</code>这类取决于命令执行环境(路径)的函数，要用<code>os.path.dirname(os.path.abspath(__file__))</code>这类取决于文件位置的函数。</li>
+</ul>
+<p><code>JSON.stringify</code> doesn&rsquo;t directly work with sets because the data stored in the set is not stored as properties.</p>
+<p>But you can convert the set to an array. Then you will be able to stringify it properly.</p>
+<p>Any of the following will do the trick:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=nx>JSON</span><span class=p>.</span><span class=nx>stringify</span><span class=p>([...</span><span class=nx>s</span><span class=p>]);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+</div>
+<div class=post-copyright>
+<p class=copyright-item>
+<span class=item-title>Author</span>
+<span class=item-content>magictomagic</span>
+</p>
+<p class=copyright-item>
+<span class=item-title>LastMod</span>
+<span class=item-content>
+2021-04-29
+</span>
+</p>
+<p class=copyright-item>
+<span class=item-title>License</span>
+<span class=item-content><a rel="license noopener" href=https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License target=_blank>Creative Commons Attribution-ShareAlike License</a></span>
+</p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/tags/%E6%AF%95%E8%AE%BE/>毕设</a>
+<a href=/tags/python/>Python</a>
+<a href=/tags/node.js/>Node.js</a>
+<a href=/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/>机器学习</a>
+<a href=/tags/%E7%88%AC%E8%99%AB/>爬虫</a>
+<a href=/tags/%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B/>异常检测</a>
+</div>
+<nav class=post-nav>
+<a class=prev href=/post/qemu-cross-compiling/>
+<i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">QEMU cross compiling</span>
+<span class="prev-text nav-mobile">Prev</span>
+</a>
+<a class=next href=/post/%E6%8B%9C%E8%AF%BB%E7%8E%8B%E5%9E%A0/>
+<span class="next-text nav-default">王垠博客阅读</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i>
+</a>
+</nav>
+</footer>
+</article>
+</div>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=social-links>
+<a href=1172765646@qq.com class="iconfont icon-email" title=email></a>
+<a href=https://stackoverflow.com/users/13469560/huaiyu-huang class="iconfont icon-stack-overflow" title=stack-overflow></a>
+<a href=https://twitter.com/magictomagic3 class="iconfont icon-twitter" title=twitter></a>
+<a href=http://localhost:1313 class="iconfont icon-linkedin" title=linkedin></a>
+<a href=https://github.com/magictomagic class="iconfont icon-github" title=github></a>
+<a href=https://iron.magictomagic.com/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a>
+</div>
+<div class=copyright>
+<span class=power-by>
+Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
+</span>
+<span class=division>|</span>
+<span class=theme-info>
+Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
+</span>
+<span class=copyright-year>
+&copy;
+2021<span class=heart><i class="iconfont icon-heart"></i></span><span>magictomagic</span>
+</span>
+</div>
+</footer>
+<div class=back-to-top id=back-to-top>
+<i class="iconfont icon-up"></i>
+</div>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script>
+</body>
+</html>

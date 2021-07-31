@@ -25,13 +25,13 @@
 <meta property="og:description" content="运行效率问题 vector < 预先reserve的vector &#171; 动态数组 < 数组 vector: 动态自增加，影响效率。 预先reserve的vector: v.reserve(n+1); -> only allocates memory, but leaves it uninitialized.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://iron.magictomagic.com/post/pat-%E7%89%9B%E5%AE%A2-%E5%88%B7%E9%A2%98/"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2021-01-11T01:37:56+08:00">
-<meta property="article:modified_time" content="2021-01-11T01:37:56+08:00">
+<meta property="article:published_time" content="2021-01-03T01:37:56+08:00">
+<meta property="article:modified_time" content="2021-01-03T01:37:56+08:00">
 <meta itemprop=name content="PAT 牛客 刷题">
-<meta itemprop=description content="运行效率问题 vector < 预先reserve的vector &#171; 动态数组 < 数组 vector: 动态自增加，影响效率。 预先reserve的vector: v.reserve(n+1); -> only allocates memory, but leaves it uninitialized."><meta itemprop=datePublished content="2021-01-11T01:37:56+08:00">
-<meta itemprop=dateModified content="2021-01-11T01:37:56+08:00">
+<meta itemprop=description content="运行效率问题 vector < 预先reserve的vector &#171; 动态数组 < 数组 vector: 动态自增加，影响效率。 预先reserve的vector: v.reserve(n+1); -> only allocates memory, but leaves it uninitialized."><meta itemprop=datePublished content="2021-01-03T01:37:56+08:00">
+<meta itemprop=dateModified content="2021-01-03T01:37:56+08:00">
 <meta itemprop=wordCount content="2401">
-<meta itemprop=keywords content="PAT,牛客,刷题,"><meta name=twitter:card content="summary">
+<meta itemprop=keywords content="PAT,牛客,刷题,C/C++,"><meta name=twitter:card content="summary">
 <meta name=twitter:title content="PAT 牛客 刷题">
 <meta name=twitter:description content="运行效率问题 vector < 预先reserve的vector &#171; 动态数组 < 数组 vector: 动态自增加，影响效率。 预先reserve的vector: v.reserve(n+1); -> only allocates memory, but leaves it uninitialized."><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
 <script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]-->
@@ -86,10 +86,9 @@
 <header class=post-header>
 <h1 class=post-title>PAT 牛客 刷题</h1>
 <div class=post-meta>
-<span class=post-time> 2021-01-11 </span>
+<span class=post-time> 2021-01-03 </span>
 <div class=post-category>
 <a href=/categories/notes/> notes </a>
-<a href=/categories/c/c++/> C/C++ </a>
 </div>
 </div>
 </header>
@@ -771,7 +770,7 @@ Sample Input
 <p class=copyright-item>
 <span class=item-title>LastMod</span>
 <span class=item-content>
-2021-01-11
+2021-01-03
 </span>
 </p>
 <p class=copyright-item>
@@ -784,6 +783,7 @@ Sample Input
 <a href=/tags/pat/>PAT</a>
 <a href=/tags/%E7%89%9B%E5%AE%A2/>牛客</a>
 <a href=/tags/%E5%88%B7%E9%A2%98/>刷题</a>
+<a href=/tags/c/c++/>C/C++</a>
 </div>
 <nav class=post-nav>
 <a class=prev href=/post/nodejs-%E7%AC%94%E8%AE%B0/>
@@ -804,21 +804,11 @@ Sample Input
 </main>
 <footer id=footer class=footer>
 <div class=social-links>
-<a href=mailto:your@email.com class="iconfont icon-email" title=email></a>
-<a href=http://localhost:1313 class="iconfont icon-stack-overflow" title=stack-overflow></a>
-<a href=http://localhost:1313 class="iconfont icon-twitter" title=twitter></a>
-<a href=http://localhost:1313 class="iconfont icon-facebook" title=facebook></a>
+<a href=1172765646@qq.com class="iconfont icon-email" title=email></a>
+<a href=https://stackoverflow.com/users/13469560/huaiyu-huang class="iconfont icon-stack-overflow" title=stack-overflow></a>
+<a href=https://twitter.com/magictomagic3 class="iconfont icon-twitter" title=twitter></a>
 <a href=http://localhost:1313 class="iconfont icon-linkedin" title=linkedin></a>
-<a href=http://localhost:1313 class="iconfont icon-google" title=google></a>
-<a href=http://localhost:1313 class="iconfont icon-github" title=github></a>
-<a href=http://localhost:1313 class="iconfont icon-weibo" title=weibo></a>
-<a href=http://localhost:1313 class="iconfont icon-zhihu" title=zhihu></a>
-<a href=http://localhost:1313 class="iconfont icon-douban" title=douban></a>
-<a href=http://localhost:1313 class="iconfont icon-pocket" title=pocket></a>
-<a href=http://localhost:1313 class="iconfont icon-tumblr" title=tumblr></a>
-<a href=http://localhost:1313 class="iconfont icon-instagram" title=instagram></a>
-<a href=http://localhost:1313 class="iconfont icon-gitlab" title=gitlab></a>
-<a href=http://localhost:1313 class="iconfont icon-bilibili" title=bilibili></a>
+<a href=https://github.com/magictomagic class="iconfont icon-github" title=github></a>
 <a href=https://iron.magictomagic.com/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a>
 </div>
 <div class=copyright>
@@ -832,8 +822,7 @@ Theme -
 </span>
 <span class=copyright-year>
 &copy;
-2017 -
-2021<span class=heart><i class="iconfont icon-heart"></i></span><span>olOwOlo</span>
+2021<span class=heart><i class="iconfont icon-heart"></i></span><span>magictomagic</span>
 </span>
 </div>
 </footer>

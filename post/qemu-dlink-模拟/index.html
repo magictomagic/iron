@@ -1,0 +1,593 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>qemu Dlink 模拟 - Iron Age</title>
+<meta name=renderer content="webkit">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=cache-control content="no-transform">
+<meta http-equiv=cache-control content="no-siteapp">
+<meta name=theme-color content="#f8f5ec">
+<meta name=msapplication-navbutton-color content="#f8f5ec">
+<meta name=apple-mobile-web-app-capable content="yes">
+<meta name=apple-mobile-web-app-status-bar-style content="#f8f5ec">
+<meta name=author content="magictomagic"><meta name=description content="固件解密 茴有四种写法 茴 用 https://github.com/fkie-cad/fact_extractor/tree/master 中 docker 的方式，注意文件目录结构要按照它要求的来创建，不然它会报错文件路径找不到 文件目录结构 1 2 3 4 5 &amp;lt;path_to_shared_folder&amp;gt; ├── files ├──"><meta name=keywords content="Hugo,theme,even">
+<meta name=generator content="Hugo 0.86.1 with theme even">
+<link rel=canonical href=https://iron.magictomagic.com/post/qemu-dlink-%E6%A8%A1%E6%8B%9F/>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=manifest href=/manifest.json>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
+<link href=/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css rel=stylesheet>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous>
+<meta property="og:title" content="qemu Dlink 模拟">
+<meta property="og:description" content="固件解密 茴有四种写法 茴 用 https://github.com/fkie-cad/fact_extractor/tree/master 中 docker 的方式，注意文件目录结构要按照它要求的来创建，不然它会报错文件路径找不到 文件目录结构 1 2 3 4 5 <path_to_shared_folder> ├── files ├──">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://iron.magictomagic.com/post/qemu-dlink-%E6%A8%A1%E6%8B%9F/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2021-03-30T01:37:56+08:00">
+<meta property="article:modified_time" content="2021-03-30T01:37:56+08:00">
+<meta itemprop=name content="qemu Dlink 模拟">
+<meta itemprop=description content="固件解密 茴有四种写法 茴 用 https://github.com/fkie-cad/fact_extractor/tree/master 中 docker 的方式，注意文件目录结构要按照它要求的来创建，不然它会报错文件路径找不到 文件目录结构 1 2 3 4 5 <path_to_shared_folder> ├── files ├──"><meta itemprop=datePublished content="2021-03-30T01:37:56+08:00">
+<meta itemprop=dateModified content="2021-03-30T01:37:56+08:00">
+<meta itemprop=wordCount content="2469">
+<meta itemprop=keywords content="experiment,qemu,"><meta name=twitter:card content="summary">
+<meta name=twitter:title content="qemu Dlink 模拟">
+<meta name=twitter:description content="固件解密 茴有四种写法 茴 用 https://github.com/fkie-cad/fact_extractor/tree/master 中 docker 的方式，注意文件目录结构要按照它要求的来创建，不然它会报错文件路径找不到 文件目录结构 1 2 3 4 5 <path_to_shared_folder> ├── files ├──"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script>
+<script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]-->
+</head>
+<body>
+<div id=mobile-navbar class=mobile-navbar>
+<div class=mobile-header-logo>
+<a href=/ class=logo>Iron</a>
+</div>
+<div class=mobile-navbar-icon>
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+<nav id=mobile-menu class="mobile-menu slideout-menu">
+<ul class=mobile-menu-list>
+<a href=/>
+<li class=mobile-menu-item>Home</li>
+</a><a href=/post/>
+<li class=mobile-menu-item>Archives</li>
+</a><a href=/tags/>
+<li class=mobile-menu-item>Tags</li>
+</a><a href=/categories/>
+<li class=mobile-menu-item>Categories</li>
+</a>
+</ul>
+</nav>
+<div class=container id=mobile-panel>
+<header id=header class=header>
+<div class=logo-wrapper>
+<a href=/ class=logo>Iron</a>
+</div>
+<nav class=site-navbar>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a class=menu-item-link href=/>Home</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/post/>Archives</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/tags/>Tags</a>
+</li><li class=menu-item>
+<a class=menu-item-link href=/categories/>Categories</a>
+</li>
+</ul>
+</nav>
+</header>
+<main id=main class=main>
+<div class=content-wrapper>
+<div id=content class=content>
+<article class=post>
+<header class=post-header>
+<h1 class=post-title>qemu Dlink 模拟</h1>
+<div class=post-meta>
+<span class=post-time> 2021-03-30 </span>
+<div class=post-category>
+<a href=/categories/exp/> exp </a>
+</div>
+</div>
+</header>
+<div class=post-toc id=post-toc>
+<h2 class=post-toc-title>Contents</h2>
+<div class="post-toc-content always-active">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#固件解密>固件解密</a>
+<ul>
+<li><a href=#茴有四种写法>茴有四种写法</a>
+<ul>
+<li><a href=#茴>茴</a></li>
+<li><a href=#回>回</a></li>
+</ul>
+</li>
+<li><a href=#结果>结果</a>
+<ul>
+<li><a href=#解密前>解密前</a></li>
+<li><a href=#解密后>解密后</a></li>
+</ul>
+</li>
+<li><a href=#经验>经验</a></li>
+</ul>
+</li>
+<li><a href=#qemu-模拟运行>qemu 模拟运行</a>
+<ul>
+<li><a href=#获取-rootfs-folder>获取 rootfs folder</a></li>
+<li><a href=#qemu-运行>qemu 运行</a>
+<ul>
+<li><a href=#常识>常识</a></li>
+<li><a href=#放弃的方向坑>放弃的方向(坑)</a></li>
+<li><a href=#回归-linux>回归 Linux</a></li>
+</ul>
+</li>
+<li><a href=#qemu-网络配置>qemu 网络配置</a>
+<ul>
+<li><a href=#常识-1>常识</a></li>
+<li><a href=#操作>操作</a></li>
+<li><a href=#启动qemu>启动qemu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class=post-content>
+<h1 id=固件解密>固件解密</h1>
+<h2 id=茴有四种写法>茴有四种写法</h2>
+<h3 id=茴>茴</h3>
+<p>用 <a href=https://github.com/fkie-cad/fact_extractor/tree/master>https://github.com/fkie-cad/fact_extractor/tree/master</a> 中 docker 的方式，注意<strong>文件目录结构</strong>要按照它要求的来创建，不然它会报错文件路径找不到</p>
+<h4 id=文件目录结构>文件目录结构</h4>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-txt data-lang=txt>&lt;path_to_shared_folder&gt;
+├── files
+├── input
+│   └── firmware_file
+└── reports
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=执行命令>执行命令</h4>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>sudo docker run -v /home/magic/Desktop/shared_folder/:/tmp/extractor -v /dev:/dev --privileged --rm fkiecad/fact_extractor
+</code></pre></td></tr></table>
+</div>
+</div><p>解秘后的文件在files中</p>
+<h3 id=回>回</h3>
+<p>用 <a href=https://github.com/0xricksanchez/dlink-decrypt>https://github.com/0xricksanchez/dlink-decrypt</a> 中的脚本，先要<code>easy_install pycrypto</code>一下，否则会<a href=https://stackoverflow.com/questions/19623267/importerror-no-module-named-crypto-cipher>报错</a>，</p>
+<h4 id=运行>运行</h4>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>python3 ./dlink-dec.py -i &lt;in&gt; -o &lt;out&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=结果>结果</h2>
+<h3 id=解密前>解密前</h3>
+<p><img src=../img/image-20210330045044436.png alt=image-20210330045044436></p>
+<h3 id=解密后>解密后</h3>
+<p><img src=../img/image-20210330044929812.png alt=image-20210330044929812></p>
+<p>两个工具解密以后得到的结果一样，说明解密部分<code>99.9999%</code>成功了</p>
+<h2 id=经验>经验</h2>
+<p>docker 的 image create container 后，container 里面可能会有自动检测程序，如果没有<strong>按照规定的方法指定容器数据卷或其它外部传参命令</strong>，改container会自动退出。</p>
+<h1 id=qemu-模拟运行>qemu 模拟运行</h1>
+<h2 id=获取-rootfs-folder>获取 rootfs folder</h2>
+<p>参考<a href=https://tsublogs.wordpress.com/2019/12/16/emulate-d-link-dcs-932l-camera-using-qemu/>博客</a></p>
+<p><img src=../img/image-20210330050231154.png alt=image-20210330050231154></p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=c1># loop</span>
+binwalk -e xxx  <span class=c1># xxx is the file to extract</span>
+<span class=c1># wait sync</span>
+<span class=nb>cd</span> yourfile.extracted/
+<span class=c1># ls and find xxx xxx.7z</span>
+<span class=c1># goto: loop</span>
+<span class=c1># 到最后，若发现 cpio-root，则</span>
+tar zcf cpio-root.tar.gz cpio-root
+</code></pre></td></tr></table>
+</div>
+</div><p>记得看一下</p>
+<p><img src=../img/image-20210330052041723.png alt=image-20210330052041723></p>
+<p>如果是小端的，就要将<code>cpio-root.tar.gz</code>发送到<strong>QEMU MIPSEL</strong>中的 <strong>rootfs folder</strong></p>
+<h2 id=qemu-运行>qemu 运行</h2>
+<h3 id=常识>常识</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-txt data-lang=txt>mips 是32位大端字节序 
+mipsel 是32位小端字节序 
+mips64el 是64位小端字节序 
+
+Initrd ramdisk或者initrd是指一个临时文件系统，它在启动阶段被Linux内核调用。initrd主要用于当“根”文件系统被挂载之前，进行准备工作
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=放弃的方向坑>放弃的方向(坑)</h3>
+<p>以 Windows 为 host，用 qemu manager, 参考 <a href=https://people.debian.org/~aurel32/qemu/mipsel/README.txt>https://people.debian.org/~aurel32/qemu/mipsel/README.txt</a> 中 <code>qemu-system-mips64el -M malta -kernel vmlinux-3.2.0-4-5kc-malta -hda debian_wheezy_mipsel_standard.qcow2 -append "root=/dev/sda1 console=tty0"</code> 配置GUI</p>
+<p><img src=../img/image-20210330063846226.png alt=image-20210330063846226></p>
+<p>然后，无论我把RAM调大还是调小，都会报错，妈的自相矛盾的bug。</p>
+<p><img src=../img/image-20210330064326406.png alt=image-20210330064326406></p>
+<p>然后又试了<code>qemu-system-mipsel -M malta -kernel vmlinux-2.6.32-5-4kc-malta -hda debian_squeeze_mipsel_standard.qcow2 -append "root=/dev/sda1 console=tty0"</code>，还是老问题。</p>
+<h3 id=回归-linux>回归 Linux</h3>
+<p>在 Ubuntu20.04TLS 下到 <a href=https://people.debian.org/~aurel32/qemu/mipsel/>https://people.debian.org/~aurel32/qemu/mipsel/</a> 中下载</p>
+<p><img src=../img/image-20210330065303212.png alt=image-20210330065303212></p>
+<p>然后参考<code>README.txt</code>运行，最后：</p>
+<p><img src=../img/image-20210330065445835.png alt=image-20210330065445835></p>
+<h2 id=qemu-网络配置>qemu 网络配置</h2>
+<p>参考<a href=https://shadow-file.blogspot.com/2013/05/running-debian-mips-linux-in-qemu.html>1</a></p>
+<h3 id=常识-1>常识</h3>
+<h4 id=tuntap>Tun/Tap</h4>
+<p>参考<a href=https://zhaohuabing.com/post/2020-02-24-linux-taptun/>1</a>,<a href=https://segmentfault.com/a/1190000009249039>2</a></p>
+<p>TAP等同于一个以太网设备，它操作第二层数据包如以太网数据帧。</p>
+<p>TUN模拟了网络层设备，操作第三层数据包比如IP数据封包。</p>
+<p><img src=https://zhaohuabing.com/img/2020-02-24-linux-taptun/linux-tuntap.png alt=img></p>
+<p>tun/tap设备的用处是将协议栈中的部分数据包转发给用户空间的应用程序</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-txt data-lang=txt>+----------------------------------------------------------------+
+|                                                                |
+|  +--------------------+      +--------------------+            |
+|  | User Application A |      | User Application B |&lt;-----+     |
+|  +--------------------+      +--------------------+      |     |
+|               | 1                    | 5                 |     |
+|...............|......................|...................|.....|
+|               ↓                      ↓                   |     |
+|         +----------+           +----------+              |     |
+|         | socket A |           | socket B |              |     |
+|         +----------+           +----------+              |     |
+|                 | 2               | 6                    |     |
+|.................|.................|......................|.....|
+|                 ↓                 ↓                      |     |
+|             +------------------------+                 4 |     |
+|             | Newwork Protocol Stack |                   |     |
+|             +------------------------+                   |     |
+|                | 7                 | 3                   |     |
+|................|...................|.....................|.....|
+|                ↓                   ↓                     |     |
+|        +----------------+    +----------------+          |     |
+|        |      eth0      |    |      tun0      |          |     |
+|        +----------------+    +----------------+          |     |
+|    10.32.0.11  |                   |   192.168.3.11      |     |
+|                | 8                 +---------------------+     |
+|                |                                               |
++----------------|-----------------------------------------------+
+                 ↓
+         Physical Network
+</code></pre></td></tr></table>
+</div>
+</div><p>eth0的另一端是物理网络，这个物理网络可能就是一个交换机，而tun0的另一端是一个用户层的程序，协议栈发给tun0的数据包能被这个应用程序读取到，并且应用程序能直接向tun0写数据。</p>
+<h4 id=用户和用户组6><a href=https://zhuanlan.zhihu.com/p/113916659>用户和用户组</a></h4>
+<p><strong>什么是用户组</strong></p>
+<p>用户组是具有相同特征用户的逻辑集合，简单来说，就是具有相同权限的用户的集合。</p>
+<p>例如：
+人事部有20名员工，他们都需要访问一个文件夹，如果我们给这20个用户的账号分别设置权限，这样太麻烦了，所以我们会建立一个用户组叫HR，对这个组设置权限，将这20个用户加入这个组就可以了。</p>
+<p><strong>用户和用户组的关系</strong></p>
+<p><strong>A</strong> 一个用户可以属于一个用户组，具有此用户组的权限。</p>
+<p>HR组可以访问/hrfile的文件夹，当user01属于HR组，那么user01就可以访问/hrfile这个文件夹</p>
+<p><strong>B</strong> 一个用户可以属于多个用户组，此时具有多个组的共同权限</p>
+<p>HR可以访问/hrfile的文件夹，运维可以访问/yunweifile的文件夹，当user01同时属于HR组和运维组，那么user01可以访问 /hrfile和/yunweifile</p>
+<p><strong>C</strong> 多个用户可以属于一个用户组，多个用户都具有此用户组的权限。</p>
+<p><strong>主组</strong>：指用户创建时默认所属的组，<strong>每个用户的主组只能有一个</strong>。创建用户时会同时创建一个和用户名相同的组。</p>
+<p>例如：添加用户xiaoming，在建立用户 xiaoming 的同时，就会建立 xiaoming 组作为 xiaoming 用户的初始组。</p>
+<p><strong>附加组</strong>：每个用户只能有一个主组，除主组外，用户再加入其他的用户组，这些用户组就是这个用户的附加组。<strong>每个用户的附加组可以有多个</strong>，而且用户可以有这些附加组的权限。</p>
+<h4 id=用户组命令>用户组命令</h4>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>groups  <span class=c1># 查看系统当前登录用户的所属组</span>
+groups magic  <span class=c1># 查询特定用户的用户组</span>
+newgrp 用户组名称 <span class=c1># 切换用户组</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=qemu-命令行配置网络>qemu 命令行配置网络</h4>
+<h5 id=老版本>老版本</h5>
+<p>按照这个[博客][https://shadow-file.blogspot.com/2013/05/running-debian-mips-linux-in-qemu.html]中配置好macaddr和tap</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>qemu-system-mipsel 
+-net nic,macaddr<span class=o>=</span><span class=s2>&#34;52:54:00:12:34:XX&#34;</span> 
+-net tap,ifname<span class=o>=[</span>tap0 <span class=p>|</span> tap1<span class=o>]</span>,script<span class=o>=</span>no,downscript<span class=o>=</span>no 
+-nographic 
+<span class=c1>############################################################################################################</span>
+-M malta -kernel vmlinux-2.6.32-5-4kc-malta -hda debian_squeeze_mipsel_standard.qcow2 -append <span class=s2>&#34;root=/dev/sda1 console=tty0&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id=20年代版本>20年代版本</h5>
+<p>整合到后面的<strong>操作</strong>><strong>配置网卡</strong>中了</p>
+<h3 id=操作>操作</h3>
+<h4 id=安装依赖>安装依赖</h4>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell> sudo apt-get install uml-utilities bridge-utils
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=配置用户组>配置用户组</h4>
+<p><a href=https://shadow-file.blogspot.com/2013/05/running-debian-mips-linux-in-qemu.html>You need to add a group that will own the tap that will be used to bridge each QEMU system to Ubuntu&rsquo;s network. Then add your user to that group.</a></p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>sudo groupadd -r tuntap
+sudo usermod -a -G tuntap magic
+newgrp tuntap
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=配置网卡>配置网卡</h4>
+<p>参考这个[博客][https://gist.github.com/extremecoders-re/e8fd8a67a515fee0c873dcafc81d811c]</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>sudo brctl addbr br0
+ifconfig
+sudo ip addr flush dev ens33  <span class=c1># ens33 用 ifconfig 看到的你自己的</span>
+sudo brctl addif br0 ens33
+sudo tunctl -t tap0 -u magic  <span class=c1># magic 是你的用户名</span>
+<span class=c1># Set &#39;tap0&#39; persistent and owned by uid 1000</span>
+sudo brctl addif br0 tap0
+sudo ifconfig ens33 up
+sudo ifconfig tap0 up
+sudo ifconfig br0 up
+brctl show
+<span class=c1># bridge name	bridge id		STP enabled	interfaces</span>
+<span class=c1># br0		8000.000c29e8ddf9	no		ens33</span>
+<span class=c1># 							tap0</span>
+sudo dhclient -v br0
+<span class=c1># Internet Systems Consortium DHCP Client 4.4.1</span>
+<span class=c1># Copyright 2004-2018 Internet Systems Consortium.</span>
+<span class=c1># All rights reserved.</span>
+<span class=c1># For info, please visit https://www.isc.org/software/dhcp/</span>
+<span class=c1># </span>
+<span class=c1># Listening on LPF/br0/00:0c:29:e8:dd:f9</span>
+<span class=c1># Sending on   LPF/br0/00:0c:29:e8:dd:f9</span>
+<span class=c1># Sending on   Socket/fallback</span>
+<span class=c1># DHCPDISCOVER on br0 to 255.255.255.255 port 67 interval 3 (xid=0x51b2ed4f)</span>
+<span class=c1># DHCPOFFER of 192.168.239.216 from 192.168.239.254</span>
+<span class=c1># DHCPREQUEST for 192.168.239.216 on br0 to 255.255.255.255 port 67 (xid=0x4fedb251)</span>
+<span class=c1># DHCPACK of 192.168.239.216 from 192.168.239.254 (xid=0x51b2ed4f)</span>
+<span class=c1># bound to 192.168.239.216 -- renewal in 767 seconds.</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=启动qemu>启动qemu</h3>
+<p>下面命令启动后17GB内存消耗完且无法<code>Ctrl + c</code>中断</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>sudo qemu-system-mipsel -net nic,macaddr<span class=o>=</span><span class=s2>&#34;00:0c:29:e8:dd:f9&#34;</span> -net tap,ifname<span class=o>=</span>tap0,script<span class=o>=</span>no,downscript<span class=o>=</span>no -nographic -M malta -kernel vmlinux-3.2.0-4-5kc-malta -hda debian_wheezy_mipsel_standard.qcow2 -append <span class=s2>&#34;root=/dev/sda1 console=tty0&#34;</span>
+
+
+</code></pre></td></tr></table>
+</div>
+</div><p>下面命令启动后出现虚拟机但一直在加载, 可以中断</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>sudo qemu-system-mipsel  -netdev tap,id<span class=o>=</span>mynet0,ifname<span class=o>=</span>tap0,script<span class=o>=</span>no,downscript<span class=o>=</span>no  -device e1000,netdev<span class=o>=</span>mynet0,mac<span class=o>=</span>52:55:00:d1:55:01 -M malta -kernel vmlinux-3.2.0-4-5kc-malta -hda debian_wheezy_mipsel_standard.qcow2
+
+sudo qemu-system-mipsel  -netdev tap,id<span class=o>=</span>mynet0,ifname<span class=o>=</span>tap0,script<span class=o>=</span>no,downscript<span class=o>=</span>no  -device e1000,netdev<span class=o>=</span>mynet0,mac<span class=o>=</span>00:0c:29:e8:dd:f9 -M malta -kernel vmlinux-3.2.0-4-5kc-malta -hda debian_wheezy_mipsel_standard.qcow2
+
+sudo qemu-system-mipsel  -netdev tap,id<span class=o>=</span>mynet0,ifname<span class=o>=</span>tap0,script<span class=o>=</span>no,downscript<span class=o>=</span>no  -device e1000,netdev<span class=o>=</span>mynet0,mac<span class=o>=</span>12:05:68:7f:3f:0b -M malta -kernel vmlinux-3.2.0-4-5kc-malta -hda debian_wheezy_mipsel_standard.qcow2
+
+sudo qemu-system-mipsel -net nic,macaddr<span class=o>=</span><span class=s2>&#34;00:0c:29:e8:dd:f9&#34;</span> -net tap,ifname<span class=o>=</span>tap0,script<span class=o>=</span>no,downscript<span class=o>=</span>no -M malta -kernel vmlinux-3.2.0-4-5kc-malta -hda debian_wheezy_mipsel_standard.qcow2 -append <span class=s2>&#34;root=/dev/sda1 console=tty0&#34;</span>
+
+<span class=c1># 原先的命令也不行了,估计是虚拟机崩了</span>
+qemu-system-mips64el -M malta -kernel vmlinux-3.2.0-4-5kc-malta -hda debian_wheezy_mipsel_standard.qcow2 -append <span class=s2>&#34;root=/dev/sda1 console=tty0&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>回滚虚拟机, 还不就是从头再来</p>
+<p>原先的命令又行了, 但上面那几条命令还是执行了以后好长时间虚拟机都只是单纯消耗内存.</p>
+<p>最后押注</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-shell data-lang=shell>sudo qemu-system-mipsel -net nic,macaddr<span class=o>=</span><span class=s2>&#34;00:0c:29:e8:dd:f9&#34;</span> -net tap,ifname<span class=o>=</span>tap0,script<span class=o>=</span>no,downscript<span class=o>=</span>no -M malta -kernel vmlinux-3.2.0-4-5kc-malta -hda debian_wheezy_mipsel_standard.qcow2 -append <span class=s2>&#34;root=/dev/sda1 console=tty0&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果还是不行, 就不用<code>uml-utilities bridge-utils</code>这两个工具了.</p>
+<p>之后的思路是</p>
+<ul>
+<li>放弃桥接的意图,直接用wget等方式下载</li>
+<li>参考<a href="https://www.cyberciti.biz/faq/ubuntu-20-04-add-network-bridge-br0-with-nmcli-command/?__cf_chl_jschl_tk__=22c400bef32b6772a555bf5ff9ffa5ff9e04c1d1-1617131812-0-AQKv2LUa6xOkuTsG8IUoUm8y7QIDb6SZco__lxEYc65eM7ZHODs5fTYbj3FC-TKTUHBmLmj3NRP6TDdH6Qk3BoN37dtMW8Lbqe_gsVZsf45Izkm9bWv28LZKKkBDlh_IzLAurXIcPXfMchIiW7cxZ-4yVeaL_TBm4YkPh66-nn96RbQtNj99NS3pAskPsC2MS31CpX7VQRFQO3w5dMYIYmk92lnd0hqx0X6PXRqriFVG-G5CmPFOFS-pXdJnMJrCuJmTqGEsb9pnH6F2FWdG98gJxSEBiN4kSH8tEZsfcER8ib-mWdL6QC7GYmXnSKk6R6KCN9Odb-BpuWRqXtU-L-t-kPDZ6URgUQ1f51ICuSGWqjFuxeziAsWK8DB7GvG3p3RRQSUkfD74oFdNwEDsTKOuoQU1y-z600eDuqhho_nx5MJHR-_L8DvkxvuNJME2e6Msha2iIOHn5tcY-tZCrCrAmCYg829UgPAaE1fDdx1kflrC7V8_utjdVH2wI3ddpgLF76X-LI7gJvT6jVVCtjQ">博客</a>用nmcli配置桥接</li>
+</ul>
+</div>
+<div class=post-copyright>
+<p class=copyright-item>
+<span class=item-title>Author</span>
+<span class=item-content>magictomagic</span>
+</p>
+<p class=copyright-item>
+<span class=item-title>LastMod</span>
+<span class=item-content>
+2021-03-30
+</span>
+</p>
+<p class=copyright-item>
+<span class=item-title>License</span>
+<span class=item-content><a rel="license noopener" href=https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License target=_blank>Creative Commons Attribution-ShareAlike License</a></span>
+</p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/tags/experiment/>experiment</a>
+<a href=/tags/qemu/>qemu</a>
+</div>
+<nav class=post-nav>
+<a class=prev href=/post/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%B7%A5%E5%85%B7/>
+<i class="iconfont icon-left"></i>
+<span class="prev-text nav-default">机器学习工具 算法框架</span>
+<span class="prev-text nav-mobile">Prev</span>
+</a>
+<a class=next href=/post/react-%E7%AC%94%E8%AE%B0/>
+<span class="next-text nav-default">react native</span>
+<span class="next-text nav-mobile">Next</span>
+<i class="iconfont icon-right"></i>
+</a>
+</nav>
+</footer>
+</article>
+</div>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=social-links>
+<a href=1172765646@qq.com class="iconfont icon-email" title=email></a>
+<a href=https://stackoverflow.com/users/13469560/huaiyu-huang class="iconfont icon-stack-overflow" title=stack-overflow></a>
+<a href=https://twitter.com/magictomagic3 class="iconfont icon-twitter" title=twitter></a>
+<a href=http://localhost:1313 class="iconfont icon-linkedin" title=linkedin></a>
+<a href=https://github.com/magictomagic class="iconfont icon-github" title=github></a>
+<a href=https://iron.magictomagic.com/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a>
+</div>
+<div class=copyright>
+<span class=power-by>
+Powered by <a class=hexo-link href=https://gohugo.io>Hugo</a>
+</span>
+<span class=division>|</span>
+<span class=theme-info>
+Theme -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a>
+</span>
+<span class=copyright-year>
+&copy;
+2021<span class=heart><i class="iconfont icon-heart"></i></span><span>magictomagic</span>
+</span>
+</div>
+</footer>
+<div class=back-to-top id=back-to-top>
+<i class="iconfont icon-up"></i>
+</div>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script>
+<script type=text/javascript src=/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js></script>
+</body>
+</html>
